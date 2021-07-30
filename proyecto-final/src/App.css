@@ -1,11 +1,38 @@
+.App-header{
+  display: grid;
+  grid-template-columns: 25% 75%;
+
+  grid-template-areas: 
+  "logo     nav"
+  "titulo   titulo";
+}
+.App-logo{
+  grid-area: logo;
+  height: 40vmin;
+  align-items: center;
+  
+}
+.App-nav{
+  grid-area: nav;
+  display: inline-block;
+  height: max-content;
+  margin: 0;
+}
+
+.App-titulo{
+  grid-area: titulo;
+  text-align: center;
+
+}
+.navbar-expand-lg .navbar-collapse {
+ 
+  flex-direction: row-reverse;
+}
+/*
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -36,3 +63,4 @@
     transform: rotate(360deg);
   }
 }
+*/
