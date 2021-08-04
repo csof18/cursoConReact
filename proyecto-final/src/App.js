@@ -7,10 +7,14 @@ function App() {
       <header className="App-header">
         
         <NavBar/>
-        <ItemListContainer greeting='Proyecto React con componente de estado'/>
+        <ItemListContainer greeting='Componente de estado'/>
+        <ItemListContainer greeting='hola ' nombre='carla' edad='85'/>
+        <ItemListContainer greeting='chao' nombre='mara' edad='40'/>
         <img src="img/logoReact.png" className="App-logo" alt="logo" />
         
-        
+        <h1 className="App-titulo">
+          Proyecto de react
+        </h1>
         
       </header>
     </div>
