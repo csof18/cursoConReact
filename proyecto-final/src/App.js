@@ -1,24 +1,23 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
+import CardProductos from './components/CartWidget';
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
         <NavBar/>
-        <ItemListContainer greeting='Componente de estado'/>
-        <ItemListContainer greeting='hola ' nombre='carla' edad='85'/>
-        <ItemListContainer greeting='chao' nombre='mara' edad='40'/>
         <img src="img/logoReact.png" className="App-logo" alt="logo" />
         
         <h1 className="App-titulo">
           Proyecto de react
         </h1>
-        
       </header>
+      <body>
+      <ItemCount/>
+      <CardProductos/>
+      </body> 
     </div>
   );
 }
-
 export default App;

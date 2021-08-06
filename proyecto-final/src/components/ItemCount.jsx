@@ -29,14 +29,14 @@ const productos = [
 export default function ItemCount() {
     const [item, setItem] = useState(1);
     
-   
-    useEffect(() => {
+   useEffect(() => {
         console.log('mostrar item ', item);
     }, [item]);
 
     productos.map((datosDelProducto) => (
         <CardProductos {...datosDelProducto}/>
     ));
+
     const {stock} = productos[0];
 
     console.log(stock, 'valor de stock');
@@ -44,22 +44,13 @@ export default function ItemCount() {
 
         return(
             <>
-                <p>{`Comprar ${item}`}</p>
-                <Botones text='comprar' onAdd={() => setItem (item +1)} />
-                <Botones  text='quitar' onAdd={() => setItem(item -1)}/>
+                <Botones text='+' onAdd={() => setItem (item +1)} />
+                <button><i class="fas fa-shopping-cart">{`Comprar ${item}`}</i></button>
+                <Botones  text='-' onAdd={() => setItem(item -1)}/>
             </>
         )
     }
-    return(
-        <>
-        <p>Lo sentimos ya no contamos con stock</p>
-        </>
-    )
-        
-
-
-
-
+    return( <p>Lo sentimos ya no contamos con stock</p>)
 }
 
 
