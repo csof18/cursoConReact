@@ -2,6 +2,8 @@ import './App.css';
 import NavBar from './components/NavBar';
 import ItemCount from './components/ItemCount';
 import CardProductos from './components/CartWidget';
+//import Item from './components/Item';
+import ItemList from './components/ItemList';
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,8 @@ function App() {
       <body>
       <ItemCount/>
       <CardProductos/>
+      <ItemList/>
+      {/*<ItemList/>*/}
       </body> 
     </div>
   );
