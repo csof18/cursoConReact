@@ -1,8 +1,8 @@
+import {Button } from "react-bootstrap";
 export default function Botones(props) {
     return(
-        <button onClick={()=> props.onAdd('ME TOCARON')} >
+        <Button variant="light" onClick={()=> props.onAdd('ME TOCARON')} >
             {props.text}
-        </button>
+        </Button>
     );
-    
 }

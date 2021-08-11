@@ -1,17 +1,19 @@
 .App-header{
   display: grid;
   grid-template-columns: 25% 75%;
-
   grid-template-areas: 
   "logo     nav"
   "titulo   titulo";
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #eaedf2 0%, #fcfdff 74%);
 }
+
 .App-logo{
   grid-area: logo;
   height: 40vmin;
-  align-items: center;
-  
+  align-items: center;  
 }
+
 .App-nav{
   grid-area: nav;
   display: inline-block;
@@ -22,9 +24,14 @@
 .App-titulo{
   grid-area: titulo;
   text-align: center;
-
 }
+
 .navbar-expand-lg .navbar-collapse {
- 
   flex-direction: row-reverse;
+}
+
+.colorDeFondo{
+  background-color: #b8c6db;
+  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+  box-shadow: 2pt 1pt 5pt #c5d5ec;
 }

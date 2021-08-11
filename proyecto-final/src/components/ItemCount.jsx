@@ -29,24 +29,22 @@ const productos = [
 export default function ItemCount() {
     const [item, setItem] = useState(1);
     
-   useEffect(() => {
+    useEffect(() => {
         console.log('mostrar item ', item);
     }, [item]);
 
     productos.map((datosDelProducto) => (
         <CardProductos {...datosDelProducto}/>
     ));
-
     const {stock} = productos[0];
-
     console.log(stock, 'valor de stock');
     if(item <= stock) {
 
         return(
             <>
-                <Botones text='+' onAdd={() => setItem (item +1)} />
-                <button><i class="fas fa-shopping-cart">{`Comprar ${item}`}</i></button>
-                <Botones  text='-' onAdd={() => setItem(item -1)}/>
+                <Botones variant="light"text='+' onAdd={() => setItem (item +1)} />
+                <Botones variant="light" text={`Comprar ${item}`}><i class="fas fa-shopping-cart"></i></Botones>
+                <Botones  variant="light"text='-' onAdd={() => setItem(item -1)}/>
             </>
         )
     }
