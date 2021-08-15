@@ -6,23 +6,23 @@ export default function Item({
   nombreProducto,
   descripcion,
   precio,
-  stock
+  stock,
 }) {
   return (
     <>
       <Button style={{ padding: 0 }} variant="outline">
-        <Card style={{ width: "18rem", margin: "10px" }}>
-          <Card.Title>{nombreProducto}</Card.Title>
+        <Card style={{ width: "18rem", margin: "10px" }} className="colorDeFondoCards">
+            <Card.Title>{nombreProducto}</Card.Title>
           <Card.Img
             variant="top"
             src={imagen.src}
             alt="imagen producto"
             style={{ height: imagen.height }}
-          />
+            />
           <Card.Body>
-            <Card.Text>{descripcion}</Card.Text>
             <p>{`${precio} $`}</p>
-            <ItemCount/>
+           <ItemCount valorStock={stock}/>
+           {console.log(stock, ' CUANTO VALE STOCK EN ITEM')}
           </Card.Body>
         </Card>
       </Button>
@@ -31,6 +31,4 @@ export default function Item({
 }
 //para hacer el boton del carrito para comprar.
 //componente con 3 botones en item, y despues pasarle el stock de item como una prop
-
-
 // componente en si. dentro de la carpeta componentes un archivo nuevo q se llame boton carrito   ....   function BotonCarrito({stockProducto}){ }

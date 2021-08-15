@@ -1,7 +1,11 @@
 import React from "react";
-import ItemList from './ItemList';
-
+import ItemDetailContainer from './ItemDetailContainer';
+import ItemDelait from './ItemDetail';
 //componente de estado
 export default function ItemListContainer() {
-    return(<ItemList/>)
+    return(
+        <>
+        <ItemDetailContainer/>
+        </>
+    )
 }

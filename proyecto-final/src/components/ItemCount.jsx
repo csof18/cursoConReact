@@ -1,56 +1,56 @@
 import { useEffect, useState } from "react";
 import Botones from "./button";
+import CartWidget from './CartWidget';
 import CardProductos from './CartWidget';
-const productos = [
-    {
-        nombreProducto: 'producto 1',
-        stock: '7',
-        imagen: '#',
-        caracteristicas: {
-            id: '1',
-            descripcion: 'descripcion producto 1',
-            precio: '100 $',
-            carrito:''
-        }
-    },
-    {
-        nombreProducto: 'producto 2',
-        stock: '4',
-        imagen: '#',
-        caracteristicas: {
-            id: '2',
-            descripcion: 'descripcion producto 2',
-            precio: '200 $',
-            carrito:''
-        }
-    }
-]
-
-export default function ItemCount() {
-    const [item, setItem] = useState(1);
-    
+import ItemDetailContainer from './ItemDetailContainer';
+import Item from './Item';
+import { Button } from "react-bootstrap";
+/*export default function ItemCount({stock}) {
+    const [item, setItem] = useState(0);
     useEffect(() => {
         console.log('mostrar item ', item);
     }, [item]);
 
-    productos.map((datosDelProducto) => (
-        <CardProductos {...datosDelProducto}/>
-    ));
-    const {stock} = productos[0];
-    console.log(stock, 'valor de stock');
     if(item <= stock) {
-
         return(
             <>
+            
+            {console.log('VER VALOR DE STOCK if ', stock)}
+            {console.log('VER VALOR DE item if ', item)}
                 <Botones variant="light"text='+' onAdd={() => setItem (item +1)} />
-                <Botones variant="light" text={`Comprar ${item}`}><i class="fas fa-shopping-cart"></i></Botones>
+                <Botones variant="light" onAdd={() => setItem (item)} text={`Comprar ${stock}`}>{<CartWidget/>}</Botones>
                 <Botones  variant="light"text='-' onAdd={() => setItem(item -1)}/>
             </>
         )
     }
-    return( <p>Lo sentimos ya no contamos con stock</p>)
+    return( <>
+        {console.log('VER VALOR DE item ', item)}
+        <p>Lo sentimos ya no contamos con stock</p>
+        </>)
 }
+*/
 
+export default function ItemCount(props){
+    const [cantCompra, setCantCompra] = useState(0);
+
+    useEffect(() => {
+        console.log('ver cantCompra ', cantCompra);
+    }, [cantCompra]);
+   if(cantCompra <= props.valorStock){
+        return(
+       <>
+            <Button variant="light" onClick={()=> setCantCompra (cantCompra + 1) }>+ </Button>
+            <Button variant="light" >{<CartWidget/>}Comprar {cantCompra}</Button>
+            <Button variant="light" onClick={()=> setCantCompra(cantCompra - 1) }>-</Button>
+       </>
+    )}
+    return(
+        <>
+        <p>Lo sentimos ya no contamos con stock</p>
+        <Button variant="light" onClick={()=> setCantCompra(cantCompra - 1)}>Quitar un producto {<CartWidget/>}</Button>
+        </>
+    )
+}
 
 
 

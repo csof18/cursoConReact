@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
-
+import Productos from "./MockAppi"; 
+import ItemDetail from './ItemDetail';
 export default function ItemList() {
   const [productos, setProductos] = useState(0);
   useEffect(() => {
     const promesas = new Promise((resolve, reject) => {
-      const datosProducto = [
+     const datosProducto = [
         {
           id: "1",
           imagen: {
@@ -67,6 +68,7 @@ export default function ItemList() {
             stock: 2
           }
       ];
+      
       const filtrandoStockDeProductos = datosProducto.filter(
         (filtrarProducto) => filtrarProducto.stock > 0
       );
@@ -88,7 +90,12 @@ export default function ItemList() {
   return (
     <>
       {productos.length &&
-        productos.map((mapaDeProductos) => <Item {...mapaDeProductos} />)}
+        productos.map((mapaDeProductos) => 
+        <>
+        <ItemDetail {...mapaDeProductos}/>
+        <Item {...mapaDeProductos} />
+        </>
+        )}
     </>
   );
 }

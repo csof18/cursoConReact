@@ -1,7 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-
+import ProbandoAppi from './components/CartWidget'
 function App() {
   return (
     <>
@@ -15,6 +15,8 @@ function App() {
         </header>
         <section className="colorDeFondo">
           <ItemListContainer/>
+          {/*<h2>PROBANDO USAR UNA API</h2>
+          <ProbandoAppi/>*/}
         </section>
       </body> 
     </>
