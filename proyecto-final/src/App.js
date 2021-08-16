@@ -1,8 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ProbandoAppi from './components/CartWidget'
-import ItemDetail from './components/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer';
 import Logo from './components/Logo';
 export default function App() {
   return (
@@ -16,7 +14,7 @@ export default function App() {
           </h1>
         </header>
         <section className="colorDeFondo">
-          <ItemListContainer/>
+          <ItemDetailContainer/>
         </section>
         <footer className='colorDeFondo'>
           <h3>Aca va el footer</h3>

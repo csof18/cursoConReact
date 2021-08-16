@@ -37,6 +37,3 @@ export default function Item({
     </>
   );
 }
-//para hacer el boton del carrito para comprar.
-//componente con 3 botones en item, y despues pasarle el stock de item como una prop
-// componente en si. dentro de la carpeta componentes un archivo nuevo q se llame boton carrito   ....   function BotonCarrito({stockProducto}){ }

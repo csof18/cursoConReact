@@ -1,25 +1,16 @@
-/*import { useState, useEffect } from 'react';
-import Productos from './MockAppi';
-import Item from './Item';
+import React, { useEffect, useState } from "react";
+import ItemList from './ItemList';
+//componente de estado
 export default function ItemDetailContainer() {
-    const [detallesProductos, setDetallesProductos] = useState([]);
-    const getProductos = async () => {
-        try{
-            const datos = await fetch(`${<Productos/>}`, {method: 'GET'});
-            const mostrandoDatos = await datos.json();
-            setDetallesProductos(mostrandoDatos.datosProducto);
-        }catch (error){
-            console.log('SURGIO UN ERROR');
-        }
-    };
-    useEffect(() => {
-        getProductos();
+    const [getItems, setGetItems] =useState([]);
+    useEffect(()=>{
+        setTimeout(()=>{
+            setGetItems()
+        }, 2000)
     }, []);
     return(
         <>
-      {detallesProductos.length &&
-        detallesProductos.map((mapProductos) => <Item {...mapProductos} />)}
-    </>
+        <ItemList/>
+        </>
     )
-}*/
-
+}
