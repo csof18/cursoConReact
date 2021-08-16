@@ -1,7 +1,7 @@
 //import { useState, useEffect } from 'react';
 //import Item from './Item';
 
-export default function Productos(props) {
+export default function MockAppi(props) {
   const datosProducto = [
     //RAMOS
     {

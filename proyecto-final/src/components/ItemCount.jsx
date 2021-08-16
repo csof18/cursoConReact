@@ -29,7 +29,7 @@ import { Button } from "react-bootstrap";
         </>)
 }
 */
-
+import ButtonGroup from 'bootstrap';
 export default function ItemCount(props){
     const [cantCompra, setCantCompra] = useState(0);
 
@@ -39,9 +39,11 @@ export default function ItemCount(props){
    if(cantCompra <= props.valorStock){
         return(
        <>
-            <Button variant="light" onClick={()=> setCantCompra (cantCompra + 1) }>+ </Button>
-            <Button variant="light" >{<CartWidget/>}Comprar {cantCompra}</Button>
-            <Button variant="light" onClick={()=> setCantCompra(cantCompra - 1) }>-</Button>
+            <div class="btn-group">
+                <Button variant="light" onClick={()=> setCantCompra (cantCompra + 1) }>+ </Button>
+                <Button variant="light" >{<CartWidget/>}Comprar {cantCompra}</Button>
+                <Button variant="light" onClick={()=> setCantCompra(cantCompra - 1) }>-</Button>
+            </div>
        </>
     )}
     return(

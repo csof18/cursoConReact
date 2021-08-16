@@ -2,24 +2,26 @@ import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ProbandoAppi from './components/CartWidget'
-function App() {
+import ItemDetail from './components/ItemDetail';
+import Logo from './components/Logo';
+export default function App() {
   return (
     <>
       <body className="App">
         <header className="App-header">
           <NavBar/>
-          <img src="img/logoReact.png" className="App-logo" alt="logo" />
-          <h1 className="App-titulo">
+          <Logo/>
+          <h1 className='App-titulo'>
             Proyecto de react
           </h1>
         </header>
         <section className="colorDeFondo">
           <ItemListContainer/>
-          {/*<h2>PROBANDO USAR UNA API</h2>
-          <ProbandoAppi/>*/}
         </section>
+        <footer className='colorDeFondo'>
+          <h3>Aca va el footer</h3>
+        </footer>
       </body> 
     </>
   );
 }
-export default App;

@@ -1,11 +1,11 @@
 /*import { Button } from 'react-bootstrap';
 import Item from './Item';
 import NavBar from './NavBar';
-import ItemDetailContainer from './ItemDetailContainer';
+import ItemList from './ItemList';
 export default function ItemDetail(props) {
     return(
         <>
-        <Button variant='light' onClick={()=> datosProducto= datosProducto.map((mapaDelProducto)=> <ItemDetailContainer {...mapaDelProducto}/>)}/>
+        <Button variant='light' onClick={()=> datosProducto= datosProducto.map((mapaDelProducto)=> <ItemList {...mapaDelProducto}/>)}/>
         {console.log('  ESTOY EN EL ITEMdETAIL ME TOCARON')}
         {props.datosProducto}
         <div>
@@ -27,7 +27,7 @@ export default function ItemDetail(props) {
 */
 /*
 import { useEffect, useState } from "react";
-import ItemDetailContainer from './ItemDetailContainer';
+import ItemList from './ItemList';
 
 
 export default function ItemDelait() {
@@ -36,7 +36,7 @@ export default function ItemDelait() {
     useEffect(() => {
         setValidarProducto(true)
         setTimeout(()=>{
-            setVerProducto(<ItemDetailContainer datosProducto={verProducto}/>)
+            setVerProducto(<ItemList datosProducto={verProducto}/>)
             setValidarProducto(false)
         },2000)
     },[])
@@ -46,26 +46,52 @@ export default function ItemDelait() {
     return(<p>ESTOY EN EL ELSE</p>)
     
 }
-*/
-/*
-import ItemDetailContainer from './ItemDetailContainer';
-export default function ItemDelait() {
-    const valor = 7;
-    if(valor > 5){
-        return(
-            <>
-            
-            
-            {console.log('ESTOY EN EL IF VALORE>5 ')}
-            </>
 
-        )
-    }
-    return(
+
+import { useEffect, useState } from "react";
+import { propTypes } from "react-bootstrap/esm/Image";
+import ItemList from './ItemList';
+
+export default function ItemDetail(props) {
+
+    const [dataProducto, setDataProducto] = useState([]);
+    useEffect(()=>{
+        setDataProducto(dataProducto)
+        console.log('VALOR DE datosProducto', dataProducto);
+    }, []);
+    return( 
         <>
-        {console.log('ESTOY EN EL ELSE VALOR<5')}
+        
+           {console.log('ESTOY EN EL IF DE DATOSPRODUCTOS')}
+        
         </>
-
-    )
+        )
+    
 }
 */
+
+import { Button } from 'react-bootstrap';
+import ItemCount from './ItemCount';
+export default function ItemDetail({imagen,nombreProducto,descripcion,precio,stock, envio, cultarDetalleProducto}){
+    console.log("Imagen:",imagen)
+    return(
+        <section className='estiloProducto'>
+                <div className='imgProducto'>
+                    <img src={imagen.src} alt={nombreProducto} height={imagen.height} className='imagen'/>
+                </div>
+                <div className='datosDeProducto'>
+                    <Button variant="outline-light" className='btnCerrarProducto' onClick={()=> {cultarDetalleProducto()}}>X</Button>
+                    <div className='detallesProduc'>
+                        <h2>{nombreProducto}</h2>
+                        <p>{descripcion}</p>
+                    </div>
+                    <div className='precioYComprar'>
+                        <p className='precioProduc'>{precio} $</p>
+                        <p className='stockProduc'>Disponibles {stock}</p>
+                        <ItemCount className='btnComprar' valorStock={stock}/>
+                    </div>
+                    <p className='datosEnvio'>{envio}</p>
+                </div>
+        </section>
+    )
+}
