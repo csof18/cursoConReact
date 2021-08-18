@@ -22,4 +22,9 @@ export default function ItemDetailContainer() {
     </>
     )
 }*/
+export default function ItemDetailContainer(){
+    return(
+        <h1>ESTOY EN ITEMDETAILCONTAINER</h1>
 
+    )
+}

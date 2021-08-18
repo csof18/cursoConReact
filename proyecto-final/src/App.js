@@ -4,6 +4,8 @@ import ItemListContainer from './components/ItemListContainer';
 import ProbandoAppi from './components/CartWidget'
 import ItemDetail from './components/ItemDetail';
 import Logo from './components/Logo';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer';
 export default function App() {
   return (
     <>
@@ -22,6 +24,23 @@ export default function App() {
           <h3>Aca va el footer</h3>
         </footer>
       </body> 
+      {/*
+      <BrowserRouter>
+        <NavBar/>
+        <Logo/>
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer/>
+          </Route>
+          <Route exact path="/category/:id">
+            <ItemListContainer/>
+          </Route>
+          <Route exact path="/item/:id">
+            <ItemDetailContainer/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+      */}
     </>
   );
 }
