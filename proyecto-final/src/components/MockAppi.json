@@ -1,34 +1,32 @@
-//import { useState, useEffect } from 'react';
-//import Item from './Item';
 
-export default function MockAppi(props) {
-  const datosProducto = [
+
+
     //RAMOS
     {
-      id: "1",
-      titulo: "ramo de flores",
-      imagen: {
-        src:
+      "id": "1",
+      "titulo": "ramo de flores",
+      "imagen": {
+        "src":
           "https://www.okchicas.com/wp-content/uploads/2020/07/Ramos-de-flores-hermosos-y-rom%C3%A1nticos-5.jpg",
-        height: "300px"
+        "height": "300px"
       },
-      nombreProducto: "Rosas rosadas",
-      descripcion: "Ramo de 24 rosas rosadas + flores de estacion",
-      precio: 1550,
-      stock: 5
+      "nombreProducto": "Rosas rosadas",
+      "descripcion": "Ramo de 24 rosas rosadas + flores de estacion",
+      "precio": 1550,
+      "stock": 5
     },
     {
-      id: "2",
-      titulo: "ramo de flores",
-      imagen: {
-        src:
+      "id": "2",
+      "titulo": "ramo de flores",
+      "imagen": {
+        "src":
           "https://www.elmueble.com/medio/2018/02/08/ramos-de-flores-silvestres-de-maria-salazar_77fc2920.jpg",
-        height: "300px"
+        "height": "300px"
       },
-      nombreProducto: "Flores de estacion",
-      descripcion: "Flores de estacion",
-      precio: 800,
-      stock: 12
+      "nombreProducto": "Flores de estacion",
+      "descripcion": "Flores de estacion",
+      "precio": 800,
+      "stock": 12
     },
     {
       id: "3",
@@ -268,36 +266,5 @@ export default function MockAppi(props) {
         precio: 850,
         stock: 5
       }
-  ];
-  console.log(datosProducto);
-  return(
-    props.datosProducto
-  )
 
-
-
-
-
-
-/*
-  const [detallesProductos, setDetallesProductos] = useState([]);
-  const getProductos = async () => {
-      try{
-          const datos = await fetch({datosProducto}, {method: 'GET'});
-          const mostrandoDatos = await datos.json();
-          setDetallesProductos(mostrandoDatos.datosProducto);
-      }catch (error){
-          console.log('SURGIO UN ERROR');
-      }
-  };
-  useEffect(() => {
-      getProductos();
-  }, []);
-  return(
-      <>
-    {detallesProductos.length &&
-      detallesProductos.map((mapProductos) => <Item {...mapProductos} />)}
-  </>
-  )
-  */
-}
+  

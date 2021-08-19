@@ -1,14 +1,13 @@
-import { Button } from 'react-bootstrap';
 import ItemCount from './ItemCount';
-export default function ItemDetail({imagen,nombreProducto,descripcion,precio,stock, envio, cultarDetalleProducto}){
+export default function ItemDetail({imagen,nombreProducto,descripcion,precio,stock, envio}){
     return(
         <section className='estiloProducto'>
                 <div className='imgProducto'>
                     <img src={imagen.src} alt={nombreProducto} height={imagen.height} className='imagen'/>
                 </div>
                 <div className='datosDeProducto'>
-                    <Button variant="outline-light" className='btnCerrarProducto' onClick={()=> {cultarDetalleProducto()}}>X</Button>
                     <div className='detallesProduc'>
+                        <h2>Producto destacaro de la semana</h2>
                         <h2>{nombreProducto}</h2>
                         <p>{descripcion}</p>
                     </div>
