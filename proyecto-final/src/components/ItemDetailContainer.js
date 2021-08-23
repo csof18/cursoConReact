@@ -1,3 +1,57 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { datosProducto } from "./datosProducto";
+import ItemDetail from "./ItemDetail";
+
+export default function ItemDetailContainer(){
+    const [dataProducto, setDataProducto] = useState([]);
+    const onAdd = (productos) =>{
+        console.log('VER VALOR DE ONADD ', productos);
+    }
+    const { id } = useParams();
+    useEffect(()=>{
+        new Promise((resolve, reject)=>{
+            resolve(datosProducto.filter((itemData)=> itemData.id === id))
+        })
+        .then((datos) => setDataProducto(datos[0]));
+    }, []);
+
+    return(
+        <ItemDetail {...dataProducto} onAdd={onAdd}/>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*import { useState, useEffect } from 'react';
 import Productos from './MockAppi';
 import Item from './Item';
@@ -22,9 +76,3 @@ export default function ItemDetailContainer() {
     </>
     )
 }*/
-export default function ItemDetailContainer(){
-    return(
-        <h1>ESTOY EN ITEMDETAILCONTAINER</h1>
-
-    )
-}

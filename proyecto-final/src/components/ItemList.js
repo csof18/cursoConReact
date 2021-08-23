@@ -1,4 +1,60 @@
-import { useState, useEffect } from 'react';
+import Item from "./Item";
+
+export default function ItemList({producto}){
+  return(
+    <>
+      {producto.map((datosItem) => (
+        <Item {...datosItem}/>
+      ))}
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import { useState, useEffect } from 'react';
 import Item from './Item';
 export default function ItemList() {
   const datosProducto = [
@@ -319,7 +375,7 @@ export default function ItemList() {
     </>
   )
 }
-
+*/
 
 
 

@@ -1,4 +1,53 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+export default function Item(props){
+  return(
+    <>
+      <Link to="/category/:id">Categoria</Link>
+      
+      <h4>{props.nombreProducto}</h4>
+      <>
+        <p>${props.precio}</p>
+      </>
+      <>
+        <p>stock {props.stock}</p>
+      </>
+      <>
+        <p>id {props.id}</p>
+      </>
+    </>
+  )
+}
+
+
+
+
+
+
+/*<Link to={`/category/${props.id}`}></Link>*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import ItemCount from './ItemCount';
 import ItemDetail from './ItemDetail';
@@ -40,3 +89,4 @@ export default function Item({
 //para hacer el boton del carrito para comprar.
 //componente con 3 botones en item, y despues pasarle el stock de item como una prop
 // componente en si. dentro de la carpeta componentes un archivo nuevo q se llame boton carrito   ....   function BotonCarrito({stockProducto}){ }
+*/

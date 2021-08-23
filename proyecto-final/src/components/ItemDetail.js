@@ -1,3 +1,54 @@
+import { Button } from "bootstrap";
+import { Link } from "react-router-dom";
+export default function ItemDetail(props){
+    return(
+        <>
+            
+            <Link to="/item/productos">Productos</Link>
+            <h4>{props.nombreProducto}</h4>
+            <h5>{props.descripcion}</h5>
+            <h3>{props.titulo}</h3>
+            <p>${props.precio}</p>
+            <>
+                <p>stock {props.stock}</p>
+            </>
+            <>
+                <p>id {props.id}</p>
+            </>
+            <Button onClick={()=> props.onAdd(props)}>ver producto</Button>
+        </>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*import { Button } from 'react-bootstrap';
 import Item from './Item';
 import NavBar from './NavBar';
@@ -69,7 +120,7 @@ export default function ItemDetail(props) {
     
 }
 */
-
+/*
 import { Button } from 'react-bootstrap';
 import ItemCount from './ItemCount';
 export default function ItemDetail({imagen,nombreProducto,descripcion,precio,stock, envio, cultarDetalleProducto}){
@@ -95,3 +146,4 @@ export default function ItemDetail({imagen,nombreProducto,descripcion,precio,sto
         </section>
     )
 }
+*/

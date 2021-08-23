@@ -29,7 +29,7 @@ import { Button } from "react-bootstrap";
         </>)
 }
 */
-import ButtonGroup from 'bootstrap';
+
 export default function ItemCount(props){
     const [cantCompra, setCantCompra] = useState(0);
 

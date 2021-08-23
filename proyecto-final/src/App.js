@@ -10,37 +10,23 @@ export default function App() {
   return (
     <>
       <body className="App">
-        <header className="App-header">
+        <BrowserRouter className="App-header">
           <NavBar/>
           <Logo/>
-          <h1 className='App-titulo'>
-            Proyecto de react
-          </h1>
-        </header>
-        <section className="colorDeFondo">
-          <ItemListContainer/>
-        </section>
-        <footer className='colorDeFondo'>
-          <h3>Aca va el footer</h3>
-        </footer>
+          <h1 className='App-titulo'>Productos</h1>
+          <Switch className="colorDeFondo">
+            <Route exact path="/">
+              <ItemListContainer/>
+            </Route>
+            <Route exact path="/category/:id">
+              <ItemListContainer/>
+            </Route>
+            <Route exact path="/item/:id">
+              <ItemDetailContainer/>
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </body> 
-      {/*
-      <BrowserRouter>
-        <NavBar/>
-        <Logo/>
-        <Switch>
-          <Route exact path="/">
-            <ItemListContainer/>
-          </Route>
-          <Route exact path="/category/:id">
-            <ItemListContainer/>
-          </Route>
-          <Route exact path="/item/:id">
-            <ItemDetailContainer/>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-      */}
     </>
   );
 }
