@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Botones from "./button";
+import Botones from "./Button";
 import CartWidget from './CartWidget';
 import CardProductos from './CartWidget';
 import ItemDetailContainer from './ItemDetailContainer';

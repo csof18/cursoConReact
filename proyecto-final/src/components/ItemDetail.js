@@ -68,7 +68,7 @@ export default function ItemDetail(props) {
         )
     
 }
-*/
+
 
 import { Button } from 'react-bootstrap';
 import ItemCount from './ItemCount';
@@ -93,5 +93,37 @@ export default function ItemDetail({imagen,nombreProducto,descripcion,precio,sto
                     <p className='datosEnvio'>{envio}</p>
                 </div>
         </section>
+    )
+}
+*/
+
+import Item from './Item';
+import { Button } from 'react-bootstrap';
+import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+export default function ItemDetail(props){
+    return(
+        <>
+        {/*<Link to={`/item/${props.titulo}/${props.id}`}></Link>*/}
+        {console.log('ME TOCAROON!! ESTOY EN EL ITEMDETAIL')}
+        <section className='estiloProducto'>
+                <div className='imgProducto'>
+                    <img src={props.imagen.src} alt={props.nombreProducto} height={props.imagen.height} className='imagen'/>
+                </div>
+                <div className='datosDeProducto'>
+                    <Button variant="outline-light" className='btnCerrarProducto'>X</Button>
+                    <div className='detallesProduc'>
+                        <h2>{props.nombreProducto}</h2>
+                        <p>{props.descripcion}</p>
+                    </div>
+                    <div className='precioYComprar'>
+                        <p className='precioProduc'>{props.precio} $</p>
+                        <p className='stockProduc'>Disponibles {props.stock}</p>
+                        <ItemCount className='btnComprar' valorStock={props.stock}/>
+                    </div>
+                    <p className='datosEnvio'>{props.envio}</p>
+                </div>
+        </section>
+        </>
     )
 }

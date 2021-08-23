@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+/*import { useState, useEffect } from 'react';
 import Item from './Item';
-export default function ItemList() {
+export default function ItemList(productos) {
   const datosProducto = [
     //RAMOS
     {
@@ -319,9 +319,17 @@ export default function ItemList() {
     </>
   )
 }
-
-
-
+*/
+import Item from './Item';
+export default function ItemList({productos, onAdd}){
+  return(
+    <>
+      {productos.map((valorItem) => (
+        <Item {...valorItem} onAdd={onAdd}/>
+        ))}
+    </>
+  );
+}
 
 
 

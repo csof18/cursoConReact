@@ -1,12 +1,11 @@
 //import { useState, useEffect } from 'react';
 //import Item from './Item';
 
-export default function MockAppi(props) {
-  const datosProducto = [
+export const datosProducto = [
     //RAMOS
     {
       id: "1",
-      titulo: "ramo de flores",
+      titulo: "ramo-de-flores",
       imagen: {
         src:
           "https://www.okchicas.com/wp-content/uploads/2020/07/Ramos-de-flores-hermosos-y-rom%C3%A1nticos-5.jpg",
@@ -19,7 +18,7 @@ export default function MockAppi(props) {
     },
     {
       id: "2",
-      titulo: "ramo de flores",
+      titulo: "ramo-de-flores",
       imagen: {
         src:
           "https://www.elmueble.com/medio/2018/02/08/ramos-de-flores-silvestres-de-maria-salazar_77fc2920.jpg",
@@ -32,7 +31,7 @@ export default function MockAppi(props) {
     },
     {
       id: "3",
-      titulo: "ramo de flores",
+      titulo: "ramo-de-flores",
       imagen: {
         src:
           "https://floreriareviens.com/wp-content/uploads/2021/06/ramos-flores.jpg",
@@ -45,10 +44,10 @@ export default function MockAppi(props) {
     },
     {
       id: "4",
-      titulo: "ramo de flores",
+      titulo: "ramo-de-flores",
       imagen: {
         src:
-          "https://floresmenta.com/1423-thickbox_default/ramo-de-margaritas-tricolor.jpgU",
+          "https://floresmenta.com/1423-thickbox_default/ramo-de-margaritas-tricolor.jpg",
         height: "300px"
       },
       nombreProducto: "Margaritas",
@@ -58,7 +57,7 @@ export default function MockAppi(props) {
     },
     {
       id: "5",
-      titulo: "ramo de flores",
+      titulo: "ramo-de-flores",
       imagen: {
         src:
           "https://d3e3r3101xvs9k.cloudfront.net/ProductOriginalPhotos/c7392c7f19a7d944ea71661e942c165e4ce3bab8.jpg",
@@ -72,7 +71,7 @@ export default function MockAppi(props) {
     //COMBOS
     {
       id: "6",
-      titulo: "combo especial",
+      titulo: "combo-especial",
       imagen: {
         src:
           "https://http2.mlstatic.com/D_NQ_NP_736325-MLA25433781363_032017-O.jpg",
@@ -85,7 +84,7 @@ export default function MockAppi(props) {
     },
     {
         id: "7",
-        titulo: "combo especial",
+        titulo: "combo-especial",
         imagen: {
           src:
             "https://www.floristeriadfranco.com/521-home_default/arreglo-floral-con-chocolates-y-peluche.jpg",
@@ -98,7 +97,7 @@ export default function MockAppi(props) {
       },
       {
         id: "8",
-        titulo: "combo especial",
+        titulo: "combo-especial",
         imagen: {
           src:
             "https://soydegamx.com/wp-content/uploads/2021/03/100796914_272753623877861_34437352722006016_n-1.png",
@@ -111,7 +110,7 @@ export default function MockAppi(props) {
       },
       {
         id: "9",
-        titulo: "combo especial",
+        titulo: "combo-especial",
         imagen: {
           src:
             "https://floresmaru.com.ar/wp-content/uploads/2019/05/14-11-2.jpg",
@@ -125,7 +124,7 @@ export default function MockAppi(props) {
 
       {
         id: "10",
-        titulo: "combo especial",
+        titulo: "combo-especial",
         imagen: {
           src:
             "https://floresavenida.com.ar/imgdb/productos/imgp1369_10.jpeg",
@@ -269,10 +268,6 @@ export default function MockAppi(props) {
         stock: 5
       }
   ];
-  console.log(datosProducto);
-  return(
-    props.datosProducto
-  )
 
 
 
@@ -300,4 +295,3 @@ export default function MockAppi(props) {
   </>
   )
   */
-}
