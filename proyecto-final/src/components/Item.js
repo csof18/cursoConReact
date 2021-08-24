@@ -1,4 +1,7 @@
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { datosProducto } from "./datosProducto";
+import ItemDetail from "./ItemDetail";
 export default function Item(props){
   return(
     <>
@@ -14,6 +17,12 @@ export default function Item(props){
       <>
         <p>id {props.id}</p>
       </>
+      
+       { /*<h2>Estoy en el div de item detail</h2>
+        <Button onClick={() => props.onAdd(props)}>agregar {<ItemDetail {...datosItem}/>}</Button>
+        <ItemDetail {...props}/>*/}
+        <Link to={`/item/${props.id}`}>ver detalles</Link>
+      
     </>
   )
 }

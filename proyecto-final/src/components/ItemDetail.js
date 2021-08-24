@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export default function ItemDetail(props){
     return(
         <>
+            {console.log('ver valor de nombre producto ', props.nombreProducto)}
             
-            <Link to="/item/productos">Productos</Link>
-            <h4>{props.nombreProducto}</h4>
-            <h5>{props.descripcion}</h5>
-            <h3>{props.titulo}</h3>
+            <h4>nombre{props.nombreProducto}</h4>
+            <h5>descripcion{props.descripcion}</h5>
+            <h3>titulo{props.titulo}</h3>
             <p>${props.precio}</p>
             <>
                 <p>stock {props.stock}</p>
@@ -15,7 +15,7 @@ export default function ItemDetail(props){
             <>
                 <p>id {props.id}</p>
             </>
-            <Button onClick={()=> props.onAdd(props)}>ver producto</Button>
+            <button onClick={()=> props.onAdd(props)}>ver producto</button>
         </>
     )
 }

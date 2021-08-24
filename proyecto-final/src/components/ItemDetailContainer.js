@@ -5,19 +5,30 @@ import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer(){
     const [dataProducto, setDataProducto] = useState([]);
+      
     const onAdd = (productos) =>{
-        console.log('VER VALOR DE ONADD ', productos);
+        <>
+        {console.log('VER VALOR DE ONADD ', productos)};
+        <ItemDetail {...productos}/>
+        <h2>Ver imagen {productos.imagen.src}</h2>
+        </>
     }
+    
     const { id } = useParams();
     useEffect(()=>{
         new Promise((resolve, reject)=>{
+           
             resolve(datosProducto.filter((itemData)=> itemData.id === id))
         })
         .then((datos) => setDataProducto(datos[0]));
     }, []);
 
-    return(
-        <ItemDetail {...dataProducto} onAdd={onAdd}/>
+    return (
+        <>
+            {dataProducto && <ItemDetail {...dataProducto}   onAdd={onAdd}/>}
+
+            {console.log('ver valor dataproducto', datosProducto)}
+        </>
     );
 }
 

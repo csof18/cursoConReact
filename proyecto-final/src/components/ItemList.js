@@ -4,7 +4,7 @@ export default function ItemList({producto}){
   return(
     <>
       {producto.map((datosItem) => (
-        <Item {...datosItem}/>
+        <Item {...datosItem} />
       ))}
     </>
   )

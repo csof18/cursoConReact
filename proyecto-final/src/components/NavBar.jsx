@@ -13,7 +13,7 @@ export default function  NavBar(){
                     <Nav>
                         <Link to="/">Inicio</Link>
                         <Link to="/category/:id">Categoria</Link>
-                        <Link to="/item/productos">Productos</Link>
+                        <Link to="/item/:id">Productos</Link>
                         <NavDropdown title={<CartWidget/>} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Especiales</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Dia del niño</NavDropdown.Item>
