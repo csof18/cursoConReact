@@ -1,21 +1,30 @@
-import { Button } from "bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount";
 export default function ItemDetail(props){
     return(
         <>
-            {console.log('ver valor de nombre producto ', props.nombreProducto)}
-            
-            <h4>nombre{props.nombreProducto}</h4>
-            <h5>descripcion{props.descripcion}</h5>
-            <h3>titulo{props.titulo}</h3>
-            <p>${props.precio}</p>
-            <>
-                <p>stock {props.stock}</p>
-            </>
-            <>
-                <p>id {props.id}</p>
-            </>
-            <button onClick={()=> props.onAdd(props)}>ver producto</button>
+            <section className='estiloProducto'>
+            {console.log('ver valor de PROPS ', props)}   
+                <div className='imgProducto'>
+                    <img src={props.imagen.src} alt={props.nombreProducto} height={props.imagen.height} className='imagen'/>
+                </div>
+                <div className='datosDeProducto'>
+                    <Button variant="outline-light" className='btnCerrarProducto'>X</Button>
+                    <div className='detallesProduc'>
+                        <h2>{props.nombreProducto}</h2>
+                        <p>{props.descripcion}</p>
+                    </div>
+                    <div className='precioYComprar'>
+                        <p className='precioProduc'>{props.precio} $</p>
+                        <p className='stockProduc'>Disponibles {props.stock}</p>
+                        <ItemCount className='btnComprar' valorStock={props.stock}/>
+                    </div>
+                    <p className='datosEnvio'>{props.envio}</p>
+                    
+                <Button onClick={()=> props.onAdd(props)} variant="outline-light">Terminar compra</Button>
+                </div>
+        </section>
         </>
     )
 }

@@ -6,16 +6,19 @@ import ItemDetail from "./ItemDetail";
 export default function ItemDetailContainer(){
     const [dataProducto, setDataProducto] = useState([]);
       
-    const onAdd = (productos) =>{
+    /*const onAdd = (...productos) =>{
         <>
         {console.log('VER VALOR DE ONADD ', productos)};
-        <ItemDetail {...productos}/>
+        
         <h2>Ver imagen {productos.imagen.src}</h2>
         </>
-    }
-    
+    }*/
     const { id } = useParams();
+    const idFiltrado = datosProducto.filter((filtrarId) => filtrarId.id === id)
+    console.log('ver FILTRADO DE ID ', idFiltrado);
+    console.log('VER ID ', id);
     useEffect(()=>{
+        setDataProducto(datosProducto)
         new Promise((resolve, reject)=>{
            
             resolve(datosProducto.filter((itemData)=> itemData.id === id))
@@ -25,14 +28,14 @@ export default function ItemDetailContainer(){
 
     return (
         <>
-            {dataProducto && <ItemDetail {...dataProducto}   onAdd={onAdd}/>}
-
-            {console.log('ver valor dataproducto', datosProducto)}
+            {dataProducto && <ItemDetail {...dataProducto}   />}
+            {console.log('ver valor dataproducto', dataProducto)}
+            {console.log('ver valor datosProducto', datosProducto)}
         </>
     );
 }
 
-
+/*onAdd={onAdd}*/
 
 
 

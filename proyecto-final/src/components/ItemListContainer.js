@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { datosProducto } from "./datosProducto";
 import ItemList from "./ItemList";
+import { Link } from "react-router-dom";
 
 export default function ItemListContainer(){
     const [producto, setProducto] = useState([]);
@@ -9,7 +10,7 @@ export default function ItemListContainer(){
     useEffect(()=>{
         new Promise((resolve, reject) => {
             setCargando(true);
-            setTimeout(()=> resolve(datosProducto), 2000);
+            setTimeout(()=> resolve(datosProducto), 1000);
         })
         .then((datos) => setProducto(datos))
         .finally(()=>{
@@ -17,5 +18,10 @@ export default function ItemListContainer(){
         });
     }, []);
 
-    return cargando ? (<h3>Cargando</h3>) : (<ItemList producto={producto}/>);
+    return (
+        <>
+        <Link to="/category/:id"></Link>
+        {cargando ? (<h3>Cargando</h3>) : (<ItemList producto={producto}/>)}
+        </>
+    )
 }
