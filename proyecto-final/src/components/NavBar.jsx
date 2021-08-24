@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import{NavDropdown} from 'react-bootstrap';
@@ -10,10 +11,10 @@ export default function  NavBar(){
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav>
-                        <Nav.Link href="#home">Ramos de Flores</Nav.Link>
-                        <Nav.Link href="#link">Pantas</Nav.Link>
-                        <Nav.Link href="#link">Regalos Sorpresa</Nav.Link>
-                        <Nav.Link href="#link">Combos especiales</Nav.Link>
+                        <Link to="/"  className="navegador">Inicio</Link>
+                        <Link to="/category/:id"  className="navegador">Categoria</Link>
+                        <Link to="/item/:id"  className="navegador">Productos</Link>
+                        
                         <NavDropdown title={<CartWidget/>} id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Especiales</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Dia del niño</NavDropdown.Item>

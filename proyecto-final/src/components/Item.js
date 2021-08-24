@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ItemCount from './ItemCount';
 import ItemDetail from './ItemDetail';
 export default function Item({
@@ -18,6 +19,7 @@ export default function Item({
   return (
     <>
       {verDetalleProducto && <ItemDetail {...{imagen,nombreProducto,descripcion,precio,stock, envio, cultarDetalleProducto}}/>}
+      <Link to="/category/:id"></Link>
       <Button style={{ padding: 0 }} className='btnVerProducto' variant="outline" onClick={()=>{setVerDetalleProducto(true)}}>
         <Card style={{ width: "18rem", margin: "10px" }} className="colorDeFondoCards">
             <Card.Title>{nombreProducto}</Card.Title>

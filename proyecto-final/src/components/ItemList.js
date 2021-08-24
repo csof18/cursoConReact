@@ -1,3 +1,35 @@
+/*import React from "react";
+import Item from "./Item";
+//componente de estado
+export default function ItemList(mapProductos) {
+    return(
+        <>
+        <Item/>
+        </>
+    )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { useState, useEffect } from 'react';
 import Item from './Item';
 export default function ItemList() {
@@ -323,7 +355,7 @@ export default function ItemList() {
 
 
 
-
+*/
 
 
 

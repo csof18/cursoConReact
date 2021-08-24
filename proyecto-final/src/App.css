@@ -45,7 +45,14 @@
   background-color: #ffffff;
   background-image: linear-gradient(315deg, #ffffff 0%, #f2f8ff 74%);
 }
-
+.navegador{
+  margin: 5px;
+  text-decoration: none;
+  color: gray;
+}
+.decoracionNone{
+  text-decoration: none;
+}
 /*ITEMDETAIL*/
 .estiloProducto{
   background-color: #0cbaba;
