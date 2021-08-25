@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ItemCount from './ItemCount';
 import ItemDetail from './ItemDetail';
 export default function Item({
   imagen,
@@ -11,7 +10,6 @@ export default function Item({
   stock,
   envio,
 }) {
-  console.log(imagen,nombreProducto,precio,stock)
   const [verDetalleProducto, setVerDetalleProducto] = useState(false);
   const cultarDetalleProducto = ()=>{
     setVerDetalleProducto(false)
@@ -31,14 +29,9 @@ export default function Item({
             />
           <Card.Body>
             <p>{`${precio} $`}</p>
-           <ItemCount valorStock={stock}/>
-           {console.log(stock, ' CUANTO VALE STOCK EN ITEM')}
           </Card.Body>
         </Card>
       </Button>
     </>
   );
 }
-//para hacer el boton del carrito para comprar.
-//componente con 3 botones en item, y despues pasarle el stock de item como una prop
-// componente en si. dentro de la carpeta componentes un archivo nuevo q se llame boton carrito   ....   function BotonCarrito({stockProducto}){ }

@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Item from './Item';
-import ItemDelait from './ItemDetail';
 import { datosProducto } from "./datosProducto";
-//componente de estado
 export default function ItemListContainer() {
 
     const [detallesProductos, setDetallesProductos] = useState([]);
     const [cargando, setCargando] = useState(false);
-    /*useEffect(()=>{
-        
-            setDetallesProductos(datosProducto)
-        
-    }, [])*/
     const getProductos = async () => {
         try{
             setDetallesProductos(datosProducto);
@@ -26,7 +19,7 @@ export default function ItemListContainer() {
         setTimeout(()=>{
             getProductos();
             setCargando(false)
-        }, 1000)
+        }, 2000)
     }, []);
     return(
         <>

@@ -116,7 +116,7 @@ export const datosProducto = [
     nombreProducto: "Ramo de rosas",
     descripcion: "ramo de 12 rosas rojas + corazon de golocinas + baileys",
     precio: 2900,
-    stock: 0
+    stock: 4
   },
 
   {
@@ -130,7 +130,7 @@ export const datosProducto = [
     nombreProducto: "Festejando El amor",
     descripcion: 'Ramo de flores con Ferrero Rocher + oso de peluche "Te amo" + 1 Champagnes',
     precio: 3000,
-    stock: 0
+    stock: 6
   },
   //regalos
   {
@@ -236,7 +236,7 @@ export const datosProducto = [
     nombreProducto: "Violeta de los alpes",
     descripcion: "Violeta de los alpes",
     precio: 800,
-    stock: 0
+    stock: 4
   },
   {
     id: "19",
