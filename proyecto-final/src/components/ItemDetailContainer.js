@@ -5,14 +5,7 @@ import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer(){
     const [dataProducto, setDataProducto] = useState([]);
-      
-    /*const onAdd = (...productos) =>{
-        <>
-        {console.log('VER VALOR DE ONADD ', productos)};
-        
-        <h2>Ver imagen {productos.imagen.src}</h2>
-        </>
-    }*/
+    
     const { id } = useParams();
     const idFiltrado = datosProducto.filter((filtrarId) => filtrarId.id === id)
     console.log('ver FILTRADO DE ID ', idFiltrado);
@@ -34,59 +27,3 @@ export default function ItemDetailContainer(){
         </>
     );
 }
-
-/*onAdd={onAdd}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*import { useState, useEffect } from 'react';
-import Productos from './MockAppi';
-import Item from './Item';
-export default function ItemDetailContainer() {
-    const [detallesProductos, setDetallesProductos] = useState([]);
-    const getProductos = async () => {
-        try{
-            const datos = await fetch(`${<Productos/>}`, {method: 'GET'});
-            const mostrandoDatos = await datos.json();
-            setDetallesProductos(mostrandoDatos.datosProducto);
-        }catch (error){
-            console.log('SURGIO UN ERROR');
-        }
-    };
-    useEffect(() => {
-        getProductos();
-    }, []);
-    return(
-        <>
-      {detallesProductos.length &&
-        detallesProductos.map((mapProductos) => <Item {...mapProductos} />)}
-    </>
-    )
-}*/

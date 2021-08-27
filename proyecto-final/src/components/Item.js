@@ -1,9 +1,6 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import ItemCount from "./ItemCount";
-import { datosProducto } from "./datosProducto";
-import ItemDetail from "./ItemDetail";
 export default function Item(props){
   return(
     <>
@@ -23,13 +20,10 @@ export default function Item(props){
            {/*<ItemCount valorStock={props.stock}/>*/}
            {console.log(props.stock, ' CUANTO VALE STOCK EN ITEM')}
           </Card.Body>
-          <Button onClick={()=> props.onAdd(props)} variant="light">ver detalle</Button>
-          <Link to={`/item/${props.id}`}>Ver detalles</Link>
+          <Link to={`/item/${props.id}`} variant="light" className="btnVerDetalles">Ver detalles</Link>
         </Card>
       </Button>
       </Link>
-        
-      
     </>
   )
 }
