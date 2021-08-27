@@ -120,7 +120,14 @@
   color: black;
   
   background-color: #000000;
-  background-image: linear-gradient(
-315deg
-, #cad5ec 0%, #f1f5fd 74%);  
+  background-image: linear-gradient(315deg, #cad5ec 0%, #f1f5fd 74%);  
+}
+.cargando{
+  margin-bottom: 50px;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  box-shadow: 2pt 1pt 5pt #cad5ec;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #cad5ec 0%, #f1f5fd 74%);  
 }

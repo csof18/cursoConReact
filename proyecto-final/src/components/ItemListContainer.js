@@ -10,7 +10,7 @@ export default function ItemListContainer(){
     useEffect(()=>{
         new Promise((resolve, reject) => {
             setCargando(true);
-            setTimeout(()=> resolve(datosProducto), 1000);
+            setTimeout(()=> resolve(datosProducto), 2000);
         })
         .then((datos) => setProducto(datos))
         .finally(()=>{
@@ -21,7 +21,7 @@ export default function ItemListContainer(){
     return (
         <>
         <Link to="/category/:id"></Link>
-        {cargando ? (<h3>Cargando</h3>) : (<ItemList producto={producto}/>)}
+        {cargando ? (<h3 className="cargando">Cargando....</h3>) : (<ItemList producto={producto}/>)}
         </>
     )
 }
