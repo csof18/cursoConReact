@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 export default function Item(props){
   return(
     <>
-      <Link to="/category/:id">
+      <Link to="/category/:titulo/:id">
       {/*PASANDO VISUAL */}
       <Button style={{ padding: 0 }} className='btnVerProducto' variant="outline" >
         <Card style={{ width: "18rem", margin: "10px" }} className="colorDeFondoCards">

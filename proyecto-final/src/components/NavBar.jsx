@@ -12,7 +12,7 @@ export default function  NavBar(){
                     <Navbar.Collapse id="basic-navbar-nav" >
                     <Nav>
                         <Link to="/"  className="navegador">Inicio</Link>
-                        <Link to="/category/:id"  className="navegador">Categoria</Link>
+                        <Link to="/category/:titulo"  className="navegador">Categoria</Link>
                         <Link to="/item/:id"  className="navegador">Productos</Link>
                         <Link to="/cart"  className="navegador">Cart</Link>
                         <NavDropdown title={<CartWidget/>} id="basic-nav-dropdown">

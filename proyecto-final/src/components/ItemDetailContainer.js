@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { datosProducto } from "./datosProducto";
 import ItemDetail from "./ItemDetail";
 
@@ -21,6 +22,7 @@ export default function ItemDetailContainer(){
 
     return (
         <>
+            <Link to={`/item/${id}`}>Estoy en itemDetailContainer</Link>
             {dataProducto && <ItemDetail {...dataProducto}   />}
             {console.log('ver valor dataproducto', dataProducto)}
             {console.log('ver valor datosProducto', datosProducto)}

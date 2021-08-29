@@ -86,7 +86,8 @@
   grid-template-columns: 50% 50%;
   grid-template-areas: 
   "precio   stock "
-  "comprar  comprar";
+  "comprar  comprar"
+  "parrafoComprar   parrafoComprar";
   justify-content: space-around;
   align-items: end;
   text-align: center;
@@ -100,6 +101,9 @@
 }
 .btnComprar{
   grid-area: comprar;
+}
+.parrafoDelBbnComprar{
+  grid-area: parrafoComprar;
 }
 .datosEnvio{
   font-size: 12pt;

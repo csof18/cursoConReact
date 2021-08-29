@@ -20,7 +20,7 @@ export default function ItemListContainer(){
 
     return (
         <>
-        <Link to="/category/:id"></Link>
+        <Link to="/category/:id">Estoy en categoria</Link>
         {cargando ? (<h3 className="cargando">Cargando....</h3>) : (<ItemList producto={producto}/>)}
         </>
     )

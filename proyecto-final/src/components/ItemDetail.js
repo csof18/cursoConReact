@@ -1,15 +1,21 @@
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { CartContext } from "../context/CartContext";
+import { useContext } from "react";
 export default function ItemDetail(props){
+  const {contextProducto, setContextProducto} =  useContext(CartContext);
+  console.log('VER VALOR DE contextProducto ', contextProducto);
     const onAdd = (producto)=> {
         console.log('agregaron producto', producto)
     }
-  
     return(
         <>
+        {console.log('VER VALOR PROPS', props.imagen)}
+        <h1>ver valor de contextProducto {contextProducto}</h1>
+        <Button onClick={()=>setContextProducto(!contextProducto)}>cambie a falso?</Button>*/
             <section className='estiloProducto'>
-            {console.log('ver valor de PROPS ', props)}   
+               
                 <div className='imgProducto'>
                     {/*<img src={props.imagen.src} alt={props.nombreProducto} height={props.imagen.height} className='imagen'/>*/}
                 </div>
