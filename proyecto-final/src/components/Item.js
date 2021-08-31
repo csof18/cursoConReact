@@ -4,25 +4,23 @@ import { Card } from "react-bootstrap";
 export default function Item(props){
   return(
     <>
-      <Link to="/category/:titulo/:id">
-      {/*PASANDO VISUAL */}
-      <Button style={{ padding: 0 }} className='btnVerProducto' variant="outline" >
-        <Card style={{ width: "18rem", margin: "10px" }} className="colorDeFondoCards">
-            <Card.Title>{props.nombreProducto}</Card.Title>
-          <Card.Img
-            variant="top"
-            src={props.imagen.src}
-            alt="imagen producto"
-            style={{ height: props.imagen.height }}
-            />
-          <Card.Body>
-            <p>{`${props.precio} $`}</p>
-           {/*<ItemCount valorStock={props.stock}/>*/}
-           {console.log(props.stock, ' CUANTO VALE STOCK EN ITEM')}
-          </Card.Body>
-          <Link to={`/item/${props.id}`} variant="light" className="btnVerDetalles">Ver detalles</Link>
-        </Card>
-      </Button>
+      <Link to="/item">
+        <Link to={`/category/${props.titulo}`}></Link>
+        <Button style={{ padding: 0 }} variant="outline" >
+          <Card style={{ width: "18rem", margin: "10px" }} className="colorDeFondoCards">
+              <Card.Title>{props.nombreProducto}</Card.Title>
+            <Card.Img
+              variant="top"
+              src={props.src}
+              alt="imagen producto"
+              style={{ height:"300px" }}
+              />
+            <Card.Body>
+              <p>{`${props.precio} $`}</p>
+            </Card.Body>
+            <Link to={`/item/${props.id}`} variant="light" className="btnVerDetalles">Ver detalles</Link>
+          </Card>
+        </Button>
       </Link>
     </>
   )

@@ -3,8 +3,7 @@ export default function Logo(){
     return(
         <>
             <Link to="/">
-
-            <img src="img/logoReact.png" className="App-logo" alt="logo" />
+                <img src="img/logoReact.png" className="App-logo" alt="logo" />
             </Link>
         </>
     )

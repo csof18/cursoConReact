@@ -6,7 +6,6 @@ import ItemDetail from "./ItemDetail";
 
 export default function ItemDetailContainer(){
     const [dataProducto, setDataProducto] = useState([]);
-    
     const { id } = useParams();
     const idFiltrado = datosProducto.filter((filtrarId) => filtrarId.id === id)
     console.log('ver FILTRADO DE ID ', idFiltrado);
@@ -19,10 +18,9 @@ export default function ItemDetailContainer(){
         })
         .then((datos) => setDataProducto(datos[0]));
     }, []);
-
     return (
         <>
-            <Link to={`/item/${id}`}>Estoy en itemDetailContainer</Link>
+            <Link to={`/item/${id}`}></Link>
             {dataProducto && <ItemDetail {...dataProducto}   />}
             {console.log('ver valor dataproducto', dataProducto)}
             {console.log('ver valor datosProducto', datosProducto)}
