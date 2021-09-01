@@ -23,7 +23,7 @@ export default function ItemDetailContainer(){
             <Link to={`/item/${id}`}></Link>
             {dataProducto && <ItemDetail {...dataProducto}   />}
             {console.log('ver valor dataproducto', dataProducto)}
-            {console.log('ver valor datosProducto', datosProducto)}
+            
         </>
     );
 }
