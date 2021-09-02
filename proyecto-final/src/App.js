@@ -10,7 +10,7 @@ import Home from './components/Home';
 import CategoryContainer from './components/CategoryContainer';
 import { datosProducto } from './components/datosProducto';
 export default function App() {
-  const [contextProducto, setContextProducto] = useState(false)
+  const [contextProducto, setContextProducto] = useState([])
 
     return (
     <>

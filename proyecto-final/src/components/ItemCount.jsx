@@ -7,8 +7,7 @@ import { CartContext } from "../context/CartContext";
 
 export default function ItemCount(props){
     const [contador, setContador] = useState(0);
-    const {contextProducto, setContextProducto} =  useContext(CartContext);
-    console.log('VER VALOR DE contextProducto ', contextProducto); 
+    const [comprado, setComprado] = useState(false);
     const sumar = ()=>{
         if(contador < props.valorStock){
             setContador(contador + 1);
@@ -27,8 +26,14 @@ export default function ItemCount(props){
             <>
                 <div class="btn-group">
                     <Button variant="light" onClick={sumar}>+ </Button>
-                    <Button variant="light" onClick={()=> setContextProducto(!contextProducto)}>{<CartWidget/>}Comprar {contador}</Button>
+                    <Button variant="light" onClick={()=> {
+                        props.onAdd(contador)
+                        setComprado(true);
+                        setTimeout(()=> setComprado(false) ,1000)
+                    } }>{<CartWidget/>}Comprar {contador}</Button>
                     <Button variant="light" onClick={restar}>-</Button>
+                    <Button onClick={()=>props.onAdd(props)} variant="outline-light" ><Link to="/cart"  className="textDecorationNone">Terminar compra </Link></Button> 
+                    { comprado && <p>Producto agregado</p>}
                 </div>
             </>
         )

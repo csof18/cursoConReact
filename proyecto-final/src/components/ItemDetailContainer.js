@@ -9,7 +9,7 @@ export default function ItemDetailContainer(){
     const { id } = useParams();
     const idFiltrado = datosProducto.filter((filtrarId) => filtrarId.id === id)
     console.log('ver FILTRADO DE ID ', idFiltrado);
-    console.log('VER ID ', id);
+    
     useEffect(()=>{
         setDataProducto(datosProducto)
         new Promise((resolve, reject)=>{
@@ -22,7 +22,6 @@ export default function ItemDetailContainer(){
         <>
             <Link to={`/item/${id}`}></Link>
             {dataProducto && <ItemDetail {...dataProducto}   />}
-            {console.log('ver valor dataproducto', dataProducto)}
             
         </>
     );

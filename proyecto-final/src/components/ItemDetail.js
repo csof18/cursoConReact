@@ -5,8 +5,16 @@ import ItemCount from "./ItemCount";
 import { useContext } from "react";
 export default function ItemDetail(props){
     const { contextProducto, setContextProducto } = useContext(CartContext);
-    const onAdd = (producto)=> {
+    const onAdd = (contador)=> {
+        const producto = { ...props, cantidad:contador}
+        const filtrarProducto = contextProducto.find(productoFiltrado => productoFiltrado.id === producto.id)
+        if(!filtrarProducto)
+            setContextProducto([...contextProducto,producto])
+        console.log('VER VALOR FILTRAR PRODUCTO CONTEXT ', filtrarProducto)
         console.log('agregaron producto', producto)
+        console.log('ver valor de contextProducto en onadd', contextProducto)
+        console.log('VER VALOR DE CONTADOR ', contador)
+    
     }
     return(
         <>
