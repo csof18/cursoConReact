@@ -7,18 +7,19 @@ export default function Cart(){
     
   const {contextProducto} =  useContext(CartContext);
   console.log('VER VALOR DE contextProducto en cart ', contextProducto);
-  const [contadorCarrito, setContadorCarrito] = useState(1);
-  const sumaProduc = () =>{
-    if(contadorCarrito < contextProducto.stock){
-      setContadorCarrito(contadorCarrito +1)
-    }
-  }
+  const onAdd = ()=>{}
   const productosEnCarrito = contextProducto.map((dataCarrito)=> {
     return (
       <>
         <img src={dataCarrito.src} alt={dataCarrito.nombreProducto} style={{height:"300px"}}/>
         <p>{dataCarrito.nombreProducto}</p>
-        <p>valor contador {dataCarrito.cantidad}</p>
+        <p>valor contador {dataCarrito.cantidad}</p>                        
+        <ItemCount  onAdd={onAdd} 
+        className='btnComprar' 
+        valorStock={dataCarrito.stock}
+        carrito={true}
+        />
+
         <Button variant="light" onClick={() => {sumaProduc 
         (console.log('me tocaron estoy en +'))}
         }>+ </Button>

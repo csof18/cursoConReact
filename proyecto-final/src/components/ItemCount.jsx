@@ -21,6 +21,13 @@ export default function ItemCount(props){
     useEffect(() => {
         console.log('ver cantCompra ', contador);
     }, [contador]);
+    if(props.carrito){
+        return (
+            <>
+                <p> Fufi </p>
+            </>
+        )
+    }
     if(contador < props.valorStock){
         return (
             <>
