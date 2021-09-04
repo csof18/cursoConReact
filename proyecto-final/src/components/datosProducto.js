@@ -7,7 +7,8 @@ export const datosProducto = [
       nombreProducto: "Rosas rosadas",
       descripcion: "Ramo de 24 rosas rosadas + flores de estacion",
       precio: 1550,
-      stock: 5
+      stock: 5,
+      envio: "Envío 48hs en CABA y GBANo Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategu.  VER MAPA EN: https://cutt.lyregalameRegalate2"
     },
     {
       id: "2",
@@ -16,7 +17,8 @@ export const datosProducto = [
       nombreProducto: "Flores de estacion",
       descripcion: "Flores de estacion",
       precio: 800,
-      stock: 12
+      stock: 12,
+      envio: "Envío 48hs en CABA y GBANo Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategu.  VER MAPA EN: https://cutt.lyregalameRegalate2"
     },
     {
       id: "3",
@@ -25,7 +27,8 @@ export const datosProducto = [
       nombreProducto: "Flores de colores",
       descripcion: "Mix de flores de colores",
       precio: 800,
-      stock: 10
+      stock: 10,
+      envio: "Envío 48hs en CABA y GBANo Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategu.  VER MAPA EN: https://cutt.lyregalameRegalate2"
     },
     {
       id: "4",
@@ -34,7 +37,8 @@ export const datosProducto = [
       nombreProducto: "Margaritas",
       descripcion: "Margaritas de colores",
       precio: 790,
-      stock: 7
+      stock: 7,
+      envio: "Envío 48hs en CABA y GBANo Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategu.  VER MAPA EN: https://cutt.lyregalameRegalate2"
     },
     {
       id: "5",
@@ -43,7 +47,8 @@ export const datosProducto = [
       nombreProducto: "Flores blancas",
       descripcion: "Mix de flores blancas",
       precio: 850,
-      stock: 8
+      stock: 8,
+      envio: "Envío 48hs en CABA y GBANo Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategu.  VER MAPA EN: https://cutt.lyregalameRegalate2"
     },
     //COMBOS
     {
@@ -53,7 +58,8 @@ export const datosProducto = [
       nombreProducto: "Combo enamorados",
       descripcion: "24 Rosas + oso de peluche + 24 Ferrero Rocher",
       precio: 4000,
-      stock: 3
+      stock: 3,
+      envio: "Envío 48hs en CABA y GBANo Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategu.  VER MAPA EN: https://cutt.lyregalameRegalate2"
     },
     {
         id: "7",
@@ -62,7 +68,8 @@ export const datosProducto = [
         nombreProducto: "Combo tierno",
         descripcion: "24 rosas + 1 oso de peluche love + 2 chocolates",
         precio: 3000,
-        stock: 3
+        stock: 3,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "8",
@@ -71,7 +78,8 @@ export const datosProducto = [
         nombreProducto: "Ramo de flores y rosas dulces",
         descripcion: "Ramo de flores mixtas + 6 Ferrero Rocher",
         precio: 2200,
-        stock: 2
+        stock: 2,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "9",
@@ -80,7 +88,8 @@ export const datosProducto = [
         nombreProducto: "Ramo de rosas",
         descripcion: "ramo de 12 rosas rojas + corazon de golocinas + baileys",
         precio: 2900,
-        stock: 0
+        stock: 0,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
 
       {
@@ -90,7 +99,8 @@ export const datosProducto = [
         nombreProducto: "Festejando El amor",
         descripcion: 'Ramo de flores con Ferrero Rocher + oso de peluche "Te amo" + 1 Champagnes',
         precio: 3000,
-        stock: 0
+        stock: 0,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       //regalos
       {
@@ -100,7 +110,8 @@ export const datosProducto = [
         nombreProducto: "Desayuno sano",
         descripcion: "Ramo de flores mixtas con 12 rosas amarillas + bandeja de frutas",
         precio: 2000,
-        stock: 6
+        stock: 6,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "12",
@@ -109,7 +120,8 @@ export const datosProducto = [
         nombreProducto: "Combo salado",
         descripcion: "4 globos dorados + 1 cartel de felicitacion + 2 cervezas + una mini torta + picadita + snacks",
         precio: 3500,
-        stock: 11
+        stock: 11,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "13",
@@ -118,7 +130,8 @@ export const datosProducto = [
         nombreProducto: "Desayuno sorpresa",
         descripcion: "2 globos de colores + mini ramo de flores + 1 cafe + mini torta + masas secas + frutas de estacion + regalos sorpresa + bandeja",
         precio: 2500,
-        stock: 9
+        stock: 9,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "14",
@@ -127,7 +140,8 @@ export const datosProducto = [
         nombreProducto: "Super merienda",
         descripcion: "4 globos + cartel y 2 fotos personalizadas + 2 rosas + 2 cervzas + 1 jugo + 2 medialunas + 1 super waffle",
         precio: 2800,
-        stock: 8
+        stock: 8,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "15",
@@ -136,7 +150,8 @@ export const datosProducto = [
         nombreProducto: "Super picada personalizada",
         descripcion: "1 chopp de cerzeza + 1 cerveza + fotos personalizadas + 1 pan de campo + mix de snacks + mix de fiambres",
         precio: 2600,
-        stock: 3
+        stock: 3,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       //PLANTAS
       {
@@ -146,7 +161,8 @@ export const datosProducto = [
         nombreProducto: "Kokedamas",
         descripcion: "El nuevo arte japones, plantas del hogar sin macetas",
         precio: 1000,
-        stock: 4
+        stock: 4,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "17",
@@ -155,7 +171,8 @@ export const datosProducto = [
         nombreProducto: "Jazmin kimura",
         descripcion: "Jazmin enano o kimura",
         precio: 980,
-        stock: 2
+        stock: 2,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "18",
@@ -164,7 +181,8 @@ export const datosProducto = [
         nombreProducto: "Violeta de los alpes",
         descripcion: "Violeta de los alpes",
         precio: 800,
-        stock: 0
+        stock: 0,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "19",
@@ -173,7 +191,8 @@ export const datosProducto = [
         nombreProducto: "No me olvides",
         descripcion: "No me olvides",
         precio: 750,
-        stock: 1
+        stock: 1,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {
         id: "20",
@@ -182,6 +201,7 @@ export const datosProducto = [
         nombreProducto: "Pensamiento",
         descripcion: "Pensamiento",
         precio: 850,
-        stock: 5
+        stock: 5,
+        envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       }
   ];

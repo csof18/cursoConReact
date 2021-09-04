@@ -3,34 +3,63 @@ import { CartContext } from "../context/CartContext";
 import { useContext, useState } from "react";
 import { Button } from "react-bootstrap";
 import ItemCount from "./ItemCount";
+import { Form } from "react-bootstrap"
+import Delete from "./Delete";
 export default function Cart(){
     
-  const {contextProducto} =  useContext(CartContext);
+  const {contextProducto, setContextProducto} =  useContext(CartContext);
   console.log('VER VALOR DE contextProducto en cart ', contextProducto);
+  const borrarProducto = (idProducto) =>{
+    const borrarDeContex = contextProducto.findIndex(elemento => idProducto === elemento.id)
+    const arrayConProductoBorrado = contextProducto.slice(borrarDeContex, 1);
+    setContextProducto(arrayConProductoBorrado);
+  }
   const onAdd = ()=>{}
   const productosEnCarrito = contextProducto.map((dataCarrito)=> {
+    
     return (
       <>
-        <img src={dataCarrito.src} alt={dataCarrito.nombreProducto} style={{height:"300px"}}/>
-        <p>{dataCarrito.nombreProducto}</p>
-        <p>valor contador {dataCarrito.cantidad}</p>                        
-        <ItemCount  onAdd={onAdd} 
-        className='btnComprar' 
-        valorStock={dataCarrito.stock}
-        carrito={true}
-        />
-
-        <Button variant="light" onClick={() => {sumaProduc 
-        (console.log('me tocaron estoy en +'))}
-        }>+ </Button>
-        <Button>Productos {contadorCarrito}{console.log('valor de contadorCarrito ', contadorCarrito)}</Button>
+      
+        <div className="carritoCss margen5">
+          <img src={dataCarrito.src} alt={dataCarrito.nombreProducto} className="imgCarrito"/>
+          <div className="datosCarrito">
+            <p>{dataCarrito.nombreProducto}</p>
+            <p>valor contador {dataCarrito.cantidad}</p>                        
+            <p >{dataCarrito.precio} $</p>
+            <ItemCount  onAdd={onAdd} 
+            valorStock={dataCarrito.stock}
+            carrito={true}
+            />
+            <Button variant="light" style={{margin:"5px"}} onClick={() => borrarProducto(dataCarrito.id)}>{<Delete/>}</Button>
+          </div>
+        </div>
       </>
       )
-    })
-    return(
-        <>
-        {productosEnCarrito}
-        
-        </>
+    }
+    )
+    if(productosEnCarrito.length !== 0){
+      return(
+          <>
+          {console.log('ESTOY EN EL IF CONTEXTOpRODUCTO ', productosEnCarrito)}
+            <div>
+              {productosEnCarrito}
+              <p>Sub total (sin envio): ...</p>
+              <div className="envioCss">
+                <Form.Check aria-label="option 1" className="itemEnvio"/>
+                <p className="textoEnvio">Envío 48hs en CABA y GBA. No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. (VER MAPA EN: https://cutt.ly/regalameRegalate)</p>
+              </div>
+              <p>Total: ...</p>
+              <Button variant="light" className="margen5">Terminas Compra</Button>
+              <Link to="/item" ><Button variant="light" className="margen5">Ver mas productos</Button></Link>
+            </div>
+          
+          </>
+      )
+    }
+    return (
+    <>
+    {console.log('ESTOY EN EL else CONTEXTOpRODUCTO ', productosEnCarrito)}
+    <h3 className="anuncios">Aun no tiene productos en el carrito</h3>
+    </>
     )
 }

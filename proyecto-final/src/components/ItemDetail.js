@@ -8,6 +8,7 @@ export default function ItemDetail(props){
     const onAdd = (contador)=> {
         const producto = { ...props, cantidad:contador}
         const filtrarProducto = contextProducto.find(productoFiltrado => productoFiltrado.id === producto.id)
+        
         if(!filtrarProducto)
             setContextProducto([...contextProducto,producto])
         console.log('VER VALOR FILTRAR PRODUCTO CONTEXT ', filtrarProducto)
@@ -23,7 +24,7 @@ export default function ItemDetail(props){
                     <img src={props.src} alt={props.nombreProducto}  className='imagen'/>
                 </div>
                 <div className='datosDeProducto'>
-                <Button  variant="outline-light" ><Link to="/item"  className="textDecorationNone">x</Link></Button> 
+                <Link to="/item"  className="textDecorationNone"><Button  variant="outline-light" >x</Button></Link> 
                     <div className='detallesProduc'>
                         <h2>{props.nombreProducto}</h2>
                         <p>{props.descripcion}</p>
@@ -31,7 +32,7 @@ export default function ItemDetail(props){
                     <div className='precioYComprar'>
                         <p className='precioProduc'>{props.precio} $</p>
                         <p className='stockProduc'>Disponibles {props.stock}</p>
-                        <ItemCount  onAdd={onAdd} className='btnComprar' valorStock={props.stock} />
+                        <ItemCount  onAdd={onAdd} className='btnComprar ' valorStock={props.stock} />
                         
                     </div>
                     <p className='datosEnvio'>{props.envio}</p>
