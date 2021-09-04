@@ -19,12 +19,21 @@ export default function ItemCount(props){
             setContador(contador - 1);
         }
     };
+    const terminarCompra = () => {
+        if(contador > 0){
+            return (
+
+                <>
+                {console.log('ESTOY EN EL IF DE TERMINAR COMPRA')}
+                <Link to="/cart" className="textDecorationNone"><Button onClick={()=>props.onAdd(props)} variant="outline-light" >Terminar compra </Button></Link> 
+            </>
+            )
+        }
+    }
     useEffect(() => {
         console.log('ver cantCompra ', contador);
     }, [contador]);
     if(props.carrito){
-        setContador(props.cantidad)
-        console.log(props.cantidad, 'VER VALOR DE CANTIDAD')
         return (
             <>
                 <div class="btn-group  datosCarrito ">
@@ -49,13 +58,14 @@ export default function ItemCount(props){
 
                     <Button variant="light" onClick={sumar}>+ </Button>
                     <Button variant="light" onClick={()=> {
+                        terminarCompra(contador)
                         props.onAdd(contador)
                         setComprado(true);
                         setTimeout(()=> setComprado(false) ,1000)
                     } }>{<CartWidget/>}Comprar {contador}</Button>
                     <Button variant="light" onClick={restar}>-</Button>
                     </div>
-                    <Link to="/cart" className="textDecorationNone"><Button onClick={()=>props.onAdd(props)} variant="outline-light" >Terminar compra </Button></Link> 
+                    {terminarCompra(contador) && <Link to="/cart" className="textDecorationNone"><Button onClick={()=>props.onAdd(props)} variant="outline-light" >Terminar compra </Button></Link>}
                     { comprado && <p className="productoAgregado">Producto agregado</p>}
                 </div>
             </>

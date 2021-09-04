@@ -18,7 +18,7 @@ export default function Item(props){
             <Card.Body>
               <p>{`${props.precio} $`}</p>
             </Card.Body>
-            <Link to={`/item/${props.id}`} variant="light" className="btnVerDetalles">Ver detalles</Link>
+            <Link to={`/item/${props.id}`} variant="light" className="linkConFormaDeBtn">Ver detalles</Link>
           </Card>
         </Button>
       </Link>

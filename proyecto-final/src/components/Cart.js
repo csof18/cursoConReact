@@ -51,6 +51,7 @@ export default function Cart(){
               <p>Total: ...</p>
               <Button variant="light" className="margen5">Terminas Compra</Button>
               <Link to="/item" ><Button variant="light" className="margen5">Ver mas productos</Button></Link>
+              <Button variant="light" className="margen5">Vaciar carrito {<Delete/>}</Button>
             </div>
           
           </>
@@ -58,8 +59,11 @@ export default function Cart(){
     }
     return (
     <>
-    {console.log('ESTOY EN EL else CONTEXTOpRODUCTO ', productosEnCarrito)}
-    <h3 className="anuncios">Aun no tiene productos en el carrito</h3>
+      {console.log('ESTOY EN EL else CONTEXTOpRODUCTO ', productosEnCarrito)}
+      <div  className="anuncios">
+        <h3>Aun no tiene productos en el carrito</h3>
+        <Link to="/item" variant="light" className="linkConFormaDeBtn btnDerecha">Ver productos</Link>
+      </div>
     </>
     )
 }

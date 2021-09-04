@@ -122,14 +122,18 @@
   color: white;
   margin: 5px;
 }
-.btnVerDetalles{
+.btnDerecha{
+  display: flex;
+  justify-content: flex-end;
+}    
+.linkConFormaDeBtn{
+  font-size: 18px;
   text-decoration: none;
   margin-bottom: 10px;
   padding: 10px;
   color: black;
-  
   background-color: #000000;
-  background-image: linear-gradient(315deg, #cad5ec 0%, #f1f5fd 74%);  
+  background-image: linear-gradient(315deg, #cad5ec 0%, #f1f5fd 74%);
 }
 .anuncios{
   margin-bottom: 50px;
