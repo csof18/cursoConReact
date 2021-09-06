@@ -2,10 +2,30 @@ import { useEffect, useState } from "react";
 import { datosProducto } from "./datosProducto";
 import ItemList from "./ItemList";
 import { Link } from "react-router-dom";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+import { getData } from "./firebase";
 export default function ItemListContainer(){
     const [producto, setProducto] = useState([]);
     const [cargando, setCargando] = useState(false);
     useEffect(()=>{
+        //pido los datos
+        const getProducto = async () => {
+            //acceso a coleccion de productos que cargue
+            const productoCollection = collection(getData(), 'productos');
+            //obtengo el snapShot(muestra la lista en ese momento, si cambia la lista no se actualiza)
+            const productoSnapshot = await getDocs(productoCollection);
+            //obtengo datos en formato json con data()
+            const productoList = productoSnapshot.docs.map(doc => doc.data());
+            console.log(productoList, 'VER QUE DEVUELVE PRODUCTOLIST');
+            setCargando(true);
+            
+            
+        }
+        getProducto();
+    })
+   /* useEffect(()=>{
         new Promise((resolve, reject) => {
             setCargando(true);
             setTimeout(()=> resolve(datosProducto), 2000);
@@ -14,7 +34,7 @@ export default function ItemListContainer(){
         .finally(()=>{
             setCargando(false);
         });
-    }, []);
+    }, []);*/
     
     return (
         <>
