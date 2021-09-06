@@ -10,8 +10,12 @@ export default function Cart(){
   const {contextProducto, setContextProducto} =  useContext(CartContext);
   console.log('VER VALOR DE contextProducto en cart ', contextProducto);
   const borrarProducto = (idProducto) =>{
+    if(contextProducto.length === 1){
+      setContextProducto([])
+      return;
+    }
     const borrarDeContex = contextProducto.findIndex(elemento => idProducto === elemento.id)
-    const arrayConProductoBorrado = contextProducto.slice(borrarDeContex, 1);
+    const arrayConProductoBorrado = contextProducto.splice(borrarDeContex - 1, 1);
     setContextProducto(arrayConProductoBorrado);
   }
   const onAdd = ()=>{}
