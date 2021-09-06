@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
-import { getData } from "./firebase";
+import { getData } from "../firebase";
 export default function ItemListContainer(){
     const [producto, setProducto] = useState([]);
     const [cargando, setCargando] = useState(false);
@@ -13,7 +13,7 @@ export default function ItemListContainer(){
         //pido los datos
         const getProducto = async () => {
             //acceso a coleccion de productos que cargue
-            const productoCollection = collection(getData(), 'producto');
+            const productoCollection = collection(getData(), 'productos');
             //obtengo el snapShot(muestra la lista en ese momento, si cambia la lista no se actualiza)
             const productoSnapshot = await getDocs(productoCollection);
             //obtengo datos en formato json con data()
