@@ -19,7 +19,7 @@ export default function ItemCount(props){
             setContador(contador - 1);
         }
     };
-    const terminarCompra = () => {
+   /* const terminarCompra = () => {
         if(contador > 0){
             return (
 
@@ -29,7 +29,7 @@ export default function ItemCount(props){
             </>
             )
         }
-    }
+    }*/
     useEffect(() => {
         console.log('ver cantCompra ', contador);
     }, [contador]);
@@ -43,7 +43,7 @@ export default function ItemCount(props){
                         setComprado(true);
                         setTimeout(()=> setComprado(false) ,1000)
                         console.log('ME TOCARON TERMINAR COMPRA')
-                    } }>{<CartWidget/>}  {contador}</Button>
+                    } }>{<CartWidget/>}  {props.cantidad}</Button>
                     <Button variant="light" onClick={restar}>-</Button>
                 </div>
                 
@@ -58,14 +58,14 @@ export default function ItemCount(props){
 
                     <Button variant="light" onClick={sumar}>+ </Button>
                     <Button variant="light" onClick={()=> {
-                        terminarCompra(contador)
+                        /*terminarCompra(contador)*/
                         props.onAdd(contador)
                         setComprado(true);
                         setTimeout(()=> setComprado(false) ,1000)
                     } }>{<CartWidget/>}Comprar {contador}</Button>
                     <Button variant="light" onClick={restar}>-</Button>
                     </div>
-                    {terminarCompra(contador) && <Link to="/cart" className="textDecorationNone"><Button onClick={()=>props.onAdd(props)} variant="outline-light" >Terminar compra </Button></Link>}
+                    <Button as={Link} to="/cart" variant="outline-light" >Terminar compra </Button>
                     { comprado && <p className="productoAgregado">Producto agregado</p>}
                 </div>
             </>
@@ -73,7 +73,7 @@ export default function ItemCount(props){
     }
     return (
         <>
-            <Link to="/cart"  className="textDecorationNone"><Button onClick={()=>props.onAdd(props)} variant="outline-light" >Terminar compra </Button></Link>
+            <Button as={Link} to="/cart" variant="outline-light" >Terminar compra </Button>
             <Button variant="outline-light" onClick={restar}>Quitar un producto {<CartWidget/>}</Button>        
             <p className="parrafoDelBbnComprar">Lo sentimos ya no contamos con mas stock</p>
         </>

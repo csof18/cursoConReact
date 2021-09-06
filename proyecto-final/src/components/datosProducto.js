@@ -88,18 +88,18 @@ export const datosProducto = [
         nombreProducto: "Ramo de rosas",
         descripcion: "ramo de 12 rosas rojas + corazon de golocinas + baileys",
         precio: 2900,
-        stock: 0,
+        stock: 3,
         envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
 
       {
         id: "10",
         titulo: "combo-especial",
-        src:"https://floresavenida.com.ar/imgdb/productos/imgp1369_10.jpeg",
+        src:"https://www.puncli.com/wp-content/uploads/2020/05/regalo-ja-51.jpg",
         nombreProducto: "Festejando El amor",
-        descripcion: 'Ramo de flores con Ferrero Rocher + oso de peluche "Te amo" + 1 Champagnes',
+        descripcion: 'Ramo de rosas + oso de peluche "Te amo" + globo "Te amo" + desayuno con taza de regalo',
         precio: 3000,
-        stock: 0,
+        stock: 5,
         envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       //regalos
@@ -181,7 +181,7 @@ export const datosProducto = [
         nombreProducto: "Violeta de los alpes",
         descripcion: "Violeta de los alpes",
         precio: 800,
-        stock: 0,
+        stock: 10,
         envio: "Envío 48hs en CABA y GBA No Escobar, Pilar, Gral Rodríguez, Marcos Paz, Ezeiza, Esteban Echeverría, Alte. Brown, F. Varela, Berazategui. VER MAPA EN: https://cutt.ly/regalameRegalate"
       },
       {

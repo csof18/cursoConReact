@@ -106,7 +106,8 @@
   grid-area: botones;
 }
 .productoAgregado{ 
- color:black;
+ color:white;
+ text-align: left;
  font-size: 20px;
 }
 .datosEnvio{
@@ -160,9 +161,9 @@
 }
 .envioCss{
   display: grid;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 10% 70% 20%;
   grid-template-areas: 
-  "item   textoEnvio";
+  "item   textoEnvio    precioEnvio";
 }
 .imgCarrito{
   grid-area: imgCarrito;
@@ -188,6 +189,11 @@
 .textoEnvio{
   grid-area: textoEnvio;
   text-align: justify;
+}
+.textoPrecioEnvio{
+  grid-area: precioEnvio;
+  margin-left: 10pt;
+  text-align: center;
 }
 .margen5{
   margin: 5pt;

@@ -8,7 +8,7 @@ export default function ItemListContainer(){
     useEffect(()=>{
         new Promise((resolve, reject) => {
             setCargando(true);
-            setTimeout(()=> resolve(datosProducto), 2000);
+            setTimeout(()=> resolve(datosProducto), 0);
         })
         .then((datos) => setProducto(datos))
         .finally(()=>{
