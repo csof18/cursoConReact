@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import Home from './components/Home';
 import CategoryContainer from './components/CategoryContainer';
 import { datosProducto } from './components/datosProducto';
+import CartContainer from './components/CartContainer';
 export default function App() {
   const [contextProducto, setContextProducto] = useState([])
 
