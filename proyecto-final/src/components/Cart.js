@@ -5,12 +5,13 @@ import { Button } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { Form } from "react-bootstrap"
 import Delete from "./Delete";
+import CartCount from "./CartCount";
 export default function Cart(){
     
   const {contextProducto, setContextProducto} =  useContext(CartContext);
   console.log('VER VALOR DE contextProducto en cart ', contextProducto);
   const [pedirEnvio, setPedirEnvio] = useState(false);
-  
+  /*
   let sumarPrecios = 0;
   for ( const precioProducto of contextProducto){
     sumarPrecios += precioProducto.precio * precioProducto.cantidad
@@ -19,7 +20,7 @@ export default function Cart(){
   console.log('VER VALOR DE FOR FUERA DE EL', sumarPrecios)
   let valorTotalConEnvio = 350 + sumarPrecios;
  console.log('ver valor del TOTAL CON EL ENVIO ', valorTotalConEnvio);
-  
+  */
   const borrarProducto = (idProducto) =>{
     if(contextProducto.length === 1){
       setContextProducto([])
@@ -49,9 +50,10 @@ export default function Cart(){
             <p>{dataCarrito.nombreProducto}</p>
             <p>valor contador {dataCarrito.cantidad}</p>                        
             <p >{dataCarrito.precio} $</p>
-            <ItemCount  onAdd={onAdd} 
+            <p>CANTIDAD DE PRODUCTOS {dataCarrito.cantidadFinal}</p>
+            {console.log('ver valor de cantidad final', dataCarrito.cantidadFinal)}
+            <CartCount  onAdd={onAdd} 
             valorStock={dataCarrito.stock}
-            carrito={true}
             cantidad={dataCarrito.cantidad}
             />
             <Button variant="light" style={{margin:"5px"}} onClick={() => borrarProducto(dataCarrito.id)}>{<Delete/>}</Button>

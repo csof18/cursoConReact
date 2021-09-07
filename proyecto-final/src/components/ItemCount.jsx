@@ -32,8 +32,8 @@ export default function ItemCount(props){
     }
     useEffect(() => {
         console.log('ver cantCompra ', contador);
-    }, [contador, props.cantidad]);
-    if(props.carrito){
+    }, [contador]);
+   /*if(props.carrito){
         return (
             <>
                 <div class="btn-group  datosCarrito ">
@@ -49,7 +49,7 @@ export default function ItemCount(props){
                 
             </>
         )
-    }
+    }*/
     if(contador < props.valorStock){
         return (
             <>
@@ -62,7 +62,7 @@ export default function ItemCount(props){
                         props.onAdd(contador)
                         setComprado(true);
                         setTimeout(()=> setComprado(false) ,1000)
-                    } }>{<CartWidget/>}Comprar {contador}</Button>
+                    } }>{contador} Proaductos agregados {<CartWidget/>} </Button>
                     <Button variant="light" onClick={restar}>-</Button>
                     </div>
                     {terminarCompra()}
