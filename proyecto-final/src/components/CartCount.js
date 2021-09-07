@@ -35,9 +35,7 @@ export default function CartCount(props, contador){
     useEffect(()=>{
         console.log('ver valor contCantidad en el useEffect', contCantidad)
     }, [contCantidad])
-    /*if(props.carrito){
-        return (sumarPrecios)
-    }*/
+   
     return (
         <>
             <div class="btn-group  datosCarrito ">
