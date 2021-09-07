@@ -19,20 +19,20 @@ export default function ItemCount(props){
             setContador(contador - 1);
         }
     };
-   /* const terminarCompra = () => {
+    const terminarCompra = () => {
         if(contador > 0){
             return (
 
                 <>
-                {console.log('ESTOY EN EL IF DE TERMINAR COMPRA')}
-                <Link to="/cart" className="textDecorationNone"><Button onClick={()=>props.onAdd(props)} variant="outline-light" >Terminar compra </Button></Link> 
+                {console.log('ESTOY EN EL IF DE VER CARRITO')}
+                <Button as={Link} to="/cart" variant="outline-light" >Ver carrito </Button> 
             </>
             )
         }
-    }*/
+    }
     useEffect(() => {
         console.log('ver cantCompra ', contador);
-    }, [contador]);
+    }, [contador, props.cantidad]);
     if(props.carrito){
         return (
             <>
@@ -58,14 +58,15 @@ export default function ItemCount(props){
 
                     <Button variant="light" onClick={sumar}>+ </Button>
                     <Button variant="light" onClick={()=> {
-                        /*terminarCompra(contador)*/
+                        terminarCompra(contador)
                         props.onAdd(contador)
                         setComprado(true);
                         setTimeout(()=> setComprado(false) ,1000)
                     } }>{<CartWidget/>}Comprar {contador}</Button>
                     <Button variant="light" onClick={restar}>-</Button>
                     </div>
-                    <Button as={Link} to="/cart" variant="outline-light" >Terminar compra </Button>
+                    {terminarCompra()}
+                    {/*<Button as={Link} to="/cart" variant="outline-light" >Terminar compra </Button>*/}
                     { comprado && <p className="productoAgregado">Producto agregado</p>}
                 </div>
             </>
@@ -73,9 +74,14 @@ export default function ItemCount(props){
     }
     return (
         <>
-            <Button as={Link} to="/cart" variant="outline-light" >Terminar compra </Button>
-            <Button variant="outline-light" onClick={restar}>Quitar un producto {<CartWidget/>}</Button>        
-            <p className="parrafoDelBbnComprar">Lo sentimos ya no contamos con mas stock</p>
+            <Button variant="light" onClick={()=> {
+                        terminarCompra(contador)
+                        props.onAdd(contador)
+                        setComprado(true);
+                        setTimeout(()=> setComprado(false) ,1000)
+                    } }>{<CartWidget/>}Comprar {contador}</Button>
+            {/*<Button as={Link} to="/cart" variant="outline-light" >Terminar compra </Button>*/}
+            <Button variant="outline-light" onClick={restar}>Quitar un producto {<CartWidget/>}</Button>
         </>
     )
 }
