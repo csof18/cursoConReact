@@ -21,8 +21,7 @@ export default function CartContainer(){
         <div className="carritoCss margen5">
           <img src={dataCarrito.src} alt={dataCarrito.nombreProducto} className="imgCarrito"/>
           <div className="datosCarrito">
-            <p>{dataCarrito.nombreProducto}</p>
-            <p>valor contador {dataCarrito.cantidad}</p>                        
+            <p>{dataCarrito.nombreProducto}</p>                       
             <p >{dataCarrito.precio} $</p>
             
             <Button variant="light" style={{margin:"5px"}} onClick={() => borrarProducto(dataCarrito.id)}>{<Delete/>}</Button>
