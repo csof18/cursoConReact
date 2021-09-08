@@ -8,8 +8,6 @@ import { CartContext } from './context/CartContext';
 import { useState, useEffect } from 'react';
 import Home from './components/Home';
 import CategoryContainer from './components/CategoryContainer';
-import { datosProducto } from './components/datosProducto';
-import CartContainer from './components/CartContainer';
 export default function App() {
   const [contextProducto, setContextProducto] = useState([])
 
@@ -17,27 +15,28 @@ export default function App() {
     <>
       <body className="App colorDeFondo">
         <BrowserRouter className="App-header">
-          <NavBar/>
-          <Switch className="colorDeFondo">
-            <Route exact path="/">
-              <Home/>
-            </Route>
-            <Route exact path="/category/:nombre">
-              <CategoryContainer/>
-            </Route>
-            
-            <Route exact path="/item">
-              <ItemListContainer/>
-            </Route>
-              <CartContext.Provider value={{contextProducto, setContextProducto}}>
-            <Route exact path="/item/:id">
-                <ItemDetailContainer/>
-            </Route>
-            <Route exact path="/cart">
-              <Cart/>
-            </Route>
-              </CartContext.Provider>
-          </Switch>
+          <CartContext.Provider value={{contextProducto, setContextProducto}}>
+            <NavBar/>
+            <Switch className="colorDeFondo">
+              <Route exact path="/">
+                <Home/>
+              </Route>
+              <Route exact path="/category/:nombre">
+                <CategoryContainer/>
+              </Route>
+              
+              <Route exact path="/item">
+                <ItemListContainer/>
+              </Route>
+                
+              <Route exact path="/item/:id">
+                  <ItemDetailContainer/>
+              </Route>
+              <Route exact path="/cart">
+                <Cart/>
+              </Route>
+            </Switch>
+          </CartContext.Provider>
         </BrowserRouter>
       </body> 
     </>

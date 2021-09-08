@@ -4,7 +4,7 @@ import{NavDropdown} from 'react-bootstrap';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-export default function  NavBar(){
+export default function  NavBar(carritoMenu){
     return(
         <>
             <Navbar expand="lg" id="App-nav" >
@@ -29,7 +29,7 @@ export default function  NavBar(){
                                 </Link>
                             </NavDropdown>
                         <Link to="/item"  className="navegador">Productos</Link>
-                        <Link to="/cart"  className="navegador">{<CartWidget/>}</Link>
+                        <Link to="/cart"  className="navegador" > {<CartWidget carritoMenu />} </Link>
                     </Nav>
                     </Navbar.Collapse>
                 </>

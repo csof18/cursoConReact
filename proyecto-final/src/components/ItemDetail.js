@@ -11,10 +11,6 @@ export default function ItemDetail(props){
         
         if(!filtrarProducto)
             setContextProducto([...contextProducto,producto])
-        console.log('VER VALOR FILTRAR PRODUCTO CONTEXT ', filtrarProducto)
-        console.log('agregaron producto', producto)
-        console.log('ver valor de contextProducto en onadd', contextProducto)
-        console.log('VER VALOR DE CONTADOR ', contador)
     
     }
     return(
