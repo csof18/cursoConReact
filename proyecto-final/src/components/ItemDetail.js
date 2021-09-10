@@ -26,6 +26,7 @@ export default function ItemDetail(props){
                 <div className='datosDeProducto'>
                 <Link to="/item"  className="textDecorationNone"><Button  variant="outline-light" >x</Button></Link> 
                     <div className='detallesProduc'>
+                        <h2>{props.id}</h2>
                         <h2>{props.nombreProducto}</h2>
                         <p>{props.descripcion}</p>
                     </div>
