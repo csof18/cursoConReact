@@ -8,9 +8,18 @@ import { CartContext } from './context/CartContext';
 import { useState, useEffect } from 'react';
 import Home from './components/Home';
 import CategoryContainer from './components/CategoryContainer';
+import { getProductos, getProductosByCategoria, getProductosById } from './firebase';
 export default function App() {
   const [contextProducto, setContextProducto] = useState([])
-
+    useEffect(() => {
+      async function getData(){
+        const result = await getProductos();
+        const resultById = await getProductosById("Bp3vJEeCB0P01clHradD");
+        const resultByCategoria = await getProductosByCategoria("combo-especial")
+        console.log(result,resultById,resultByCategoria);
+      }
+      getData();
+    },[])
     return (
     <>
       <body className="App colorDeFondo">
