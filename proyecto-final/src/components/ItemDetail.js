@@ -5,10 +5,10 @@ import ItemCount from "./ItemCount";
 import { useContext } from "react";
 export default function ItemDetail(props){
     const { contextProducto, setContextProducto } = useContext(CartContext);
-    const onAdd = (contador)=> {
-        const producto = { ...props, cantidad:contador}
+    const onAdd = (contador, contCantidad)=> {
+        const producto = { ...props, cantidad:contador, cantidadTotal:contCantidad}
         const filtrarProducto = contextProducto.find(productoFiltrado => productoFiltrado.id === producto.id)
-        
+        console.log('AAAAAAAAAAAAAAAAAVEEEEEEEEEEEEEEEEEEEER VALOR de producto ', producto)
         if(!filtrarProducto)
             setContextProducto([...contextProducto,producto])
     

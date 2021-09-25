@@ -198,3 +198,8 @@
 .margen5{
   margin: 5pt;
 }
+.carritoCompras{
+  line-height: 1.5;
+  background-color: white;
+  padding: .375rem .75rem;
+}
