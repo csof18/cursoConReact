@@ -203,3 +203,6 @@
   background-color: white;
   padding: .375rem .75rem;
 }
+.alinearTextoIzquierda{
+  text-align: left;
+}

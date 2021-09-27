@@ -6,14 +6,13 @@ export default function CartWidget(){
     const {contextProducto, setContextProducto} =  useContext(CartContext);
     useEffect( () => {
         let productosEnCarrito = 0;
-        if(contextProducto.length){
             for ( const cantidadDeProductos of contextProducto){
               productosEnCarrito += cantidadDeProductos.cantidad
               console.log('VER VALOR DE CANTIDAD DENTRO DEL FOR ', cantidadDeProductos.cantidad)
             }
             console.log("productosCarrito",productosEnCarrito)
             setContarProductos(productosEnCarrito)
-        }
+        
     }, [contextProducto])
     return (
         <>

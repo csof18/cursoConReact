@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 
 //CONFIGURACION FIREBASE PARA USAR FIRESTORE
-import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore/lite';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -21,6 +21,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); 
 
+async function addOrden(productosComprados,cliente){
+// Add a new document with a generated id.
+console.log(productosComprados,cliente);
+const orden = {
+  items:productosComprados.productos,
+  fecha: new Date(),
+  estado: "generada",
+  total: productosComprados.total,
+  envio: productosComprados.envio,
+  cliente
+}
+
+const docRef = await addDoc(collection(db, "ordenes"), orden );
+
+return docRef
+}
 //ESTA FUNCION RECIBE EL FIRESTORE
 async function getProductos(){
   const coleccion = collection(db, 'productos');
@@ -42,4 +58,4 @@ async function getProductosByCategoria(categoria){
     return productosFiltradosPorCategoria;
 }
 
-export { getProductos, getProductosById, getProductosByCategoria };
+export { getProductos, getProductosById, getProductosByCategoria, addOrden };

@@ -18,7 +18,7 @@ export default function ItemCount(props){
     useEffect(() => {
         console.log('ver cantCompra ', contador);
     }, [contador]);
-    if(contador < props.valorStock){
+    if(contador <= props.valorStock){
         return (
             <>
                 <div className="botonesCompra">
@@ -34,20 +34,14 @@ export default function ItemCount(props){
                     <Button variant="light" onClick={restar}>-</Button>
                     </div>
                     {contador > 0 ? (<Button as={Link} to="/cart" variant="outline-light" >Ver carrito </Button>) : (console.log('no agrego ningun producto al carrito'))}
-                    { comprado && <p className="productoAgregado">Producto agregado</p>}
+                    {comprado && <p className="productoAgregado">Producto agregado</p>}
                 </div>
             </>
         )
     }
     return (
         <>
-            <Button variant="light" onClick={()=> {
-                        props.onAdd(contador)
-                        setComprado(true);
-                        setTimeout(()=> setComprado(false) ,1000)
-                    } }>Productos agregados {contador}</Button>
-            
-            <Button variant="outline-light" onClick={restar}>Quitar un producto</Button>
+            <p>Los entimos no contamos con mas stock</p>
         </>
     )
 }

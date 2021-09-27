@@ -9,17 +9,7 @@ export default function CartCount(props, contador){
   console.log('VER VALOR DE contextProducto en CARTCOUNT ', contextProducto);
 
     const[contCantidad, setContCantidad] = useState(props.cantidad)
-    //calculando total
-   /* let sumarPrecios = 0;
-    for ( const precioProducto of contextProducto){
-      sumarPrecios += precioProducto.precio * precioProducto.contCantidad
-      console.log('VER VALOR DE FOR DENTRO DEL FOR', sumarPrecios)
-    }
-    console.log('VER VALOR DE FOR FUERA DE EL', sumarPrecios)
-    let valorTotalConEnvio = 350 + sumarPrecios;
-   console.log('ver valor del TOTAL CON EL ENVIO ', valorTotalConEnvio);
-    
-*/
+
 
     const sumarCantidad = () => {
         if(contCantidad < props.valorStock){
