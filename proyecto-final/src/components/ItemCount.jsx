@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -15,9 +15,6 @@ export default function ItemCount(props){
             setContador(contador - 1);
         }
     };
-    useEffect(() => {
-        console.log('ver cantCompra ', contador);
-    }, [contador]);
     if(contador <= props.valorStock){
         return (
             <>
@@ -25,7 +22,6 @@ export default function ItemCount(props){
                     <div className="btn-group ">
 
                     <Button variant="light" onClick={sumar}>+ </Button>
-                    {console.log('ver valor de contador ',contador)}
                     <Button variant="light" onClick={()=> {
                         props.onAdd(contador)
                         setComprado(true);
@@ -33,15 +29,11 @@ export default function ItemCount(props){
                     } }>{contador} Productos agregados</Button>
                     <Button variant="light" onClick={restar}>-</Button>
                     </div>
-                    {contador > 0 ? (<Button as={Link} to="/cart" variant="outline-light" >Ver carrito </Button>) : (console.log('no agrego ningun producto al carrito'))}
+                    {contador > 0 && <Button as={Link} to="/cart" variant="outline-light" >Ver carrito </Button>}
                     {comprado && <p className="productoAgregado">Producto agregado</p>}
                 </div>
             </>
         )
     }
-    return (
-        <>
-            <p>Los entimos no contamos con mas stock</p>
-        </>
-    )
+    return <p>Los entimos no contamos con mas stock</p>
 }
