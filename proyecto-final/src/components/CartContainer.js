@@ -40,5 +40,5 @@ export default function CartContainer(){
       </>
     )
   })
-  return ({productosEnCarrito})
+  return (productosEnCarrito)
 }

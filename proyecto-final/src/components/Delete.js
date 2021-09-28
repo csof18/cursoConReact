@@ -1,5 +1,5 @@
 export default function Delete(){
     return (
-        <i class="fas fa-trash-alt"></i>
+        <i className="fas fa-trash-alt"></i>
     )
 }

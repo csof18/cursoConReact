@@ -16,7 +16,7 @@ export default function CartCount(props){
     }
     return (
         <>
-            <div class="btn-group  datosCarrito ">
+            <div className="btn-group  datosCarrito ">
                 <Button variant="light" onClick={sumarCantidad}>+ </Button>
                 <i className="fas fa-shopping-cart carritoCompras"> {contCantidad}</i>
                 <Button variant="light" onClick={restarCantidad}>-</Button>
