@@ -5,7 +5,6 @@ import Delete from "./Delete";
 import CartCount from "./CartCount";
 export default function CartContainer(){
   const {contextProducto, setContextProducto} =  useContext(CartContext);
-  console.log('VER VALOR DE contextProducto en cart ', contextProducto);
   const borrarProducto = (idProducto) =>{
     const arrayConProductoBorrado = contextProducto.filter(productoBorrado => productoBorrado.id !== idProducto)
     setContextProducto(arrayConProductoBorrado);
@@ -41,10 +40,5 @@ export default function CartContainer(){
       </>
     )
   })
-  return(
-    <>
-      {productosEnCarrito}
-      {console.log('ESTOY EN EL IF CONTEXTOpRODUCTO ', productosEnCarrito)}
-    </>
-  )
+  return ({productosEnCarrito})
 }

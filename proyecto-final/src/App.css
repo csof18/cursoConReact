@@ -63,7 +63,6 @@
 .imagen{
   width: 350pt;
   height: 300pt;
-  /* padding: 5pt; */
   margin: 10pt;
 }
 .datosDeProducto{
@@ -106,9 +105,9 @@
   grid-area: botones;
 }
 .productoAgregado{ 
- color:white;
- text-align: left;
- font-size: 20px;
+  color:white;
+  text-align: left;
+  font-size: 20px;
 }
 .datosEnvio{
   font-size: 12pt;
@@ -145,19 +144,11 @@
   background-color: #000000;
   background-image: linear-gradient(315deg, #cad5ec 0%, #f1f5fd 74%);  
 }
-
-
 .carritoCss{
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-areas:
-  "imgCarrito   datosCarrito"
-  /*"imgCarrito   btnCarrito    precioProducto"
-  "subTotal     subTotal      subTotal"
-  "envios       envios        envios"
-  "total        total         total"
-  "terminarCompra   terminarCompra    terminarCompra"
-  "verMas       verMas        verMas"*/;
+  "imgCarrito   datosCarrito";
 }
 .envioCss{
   display: grid;
@@ -171,7 +162,6 @@
   height: 200px;
 }
 .datosCarrito{
-  
   grid-area: datosCarrito;
 }
 .borrarProducto{

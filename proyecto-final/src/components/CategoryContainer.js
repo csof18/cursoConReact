@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { datosProducto } from "./datosProducto";
 import Category from "./Category";
 import { useParams } from "react-router";
-import { getProductos } from "../firebase";
-import { getProductosById } from "../firebase";
 import { getProductosByCategoria } from "../firebase";
+
 export default function CategoryContainer(){
     const [filtrarTitulo, setFiltrarTitulo ]= useState([])
     const { nombre } = useParams();

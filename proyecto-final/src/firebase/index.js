@@ -1,13 +1,5 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-
-//CONFIGURACION FIREBASE PARA USAR FIRESTORE
 import { getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore/lite';
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDwWvGiKsDmPx6B6_tNyfOHxNaRDi9DBMg",
   authDomain: "regalameregalate-e367e.firebaseapp.com",
@@ -22,20 +14,16 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); 
 
 async function addOrden(productosComprados,cliente){
-// Add a new document with a generated id.
-console.log(productosComprados,cliente);
-const orden = {
-  items:productosComprados.productos,
-  fecha: new Date(),
-  estado: "generada",
-  total: productosComprados.total,
-  envio: productosComprados.envio,
-  cliente
-}
-
-const docRef = await addDoc(collection(db, "ordenes"), orden );
-
-return docRef
+  const orden = {
+    items:productosComprados.productos,
+    fecha: new Date(),
+    estado: "generada",
+    total: productosComprados.total,
+    envio: productosComprados.envio,
+    cliente
+  }
+  const docRef = await addDoc(collection(db, "ordenes"), orden );
+  return docRef
 }
 //ESTA FUNCION RECIBE EL FIRESTORE
 async function getProductos(){
@@ -44,12 +32,10 @@ async function getProductos(){
   const productos = snapshot.docs.map( doc => ({ id: doc.id, ...doc.data() }));
   return productos;
 }
-
 async function getProductosById(id){
     const productos = await getProductos();
     return productos.find( producto => producto.id == id);
 }
-
 async function getProductosByCategoria(categoria){
     const coleccion = collection(db, 'productos');
     const queryProductos = query(coleccion, where("titulo","==",categoria));
@@ -57,5 +43,4 @@ async function getProductosByCategoria(categoria){
     const productosFiltradosPorCategoria = snapshot.docs.map( doc => ({ id: doc.id, ...doc.data() }));
     return productosFiltradosPorCategoria;
 }
-
 export { getProductos, getProductosById, getProductosByCategoria, addOrden };

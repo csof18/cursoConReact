@@ -4,7 +4,8 @@ import{NavDropdown} from 'react-bootstrap';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-export default function  NavBar(carritoMenu){
+
+export default function  NavBar(){
     return(
         <>
             <Navbar expand="lg" id="App-nav" >

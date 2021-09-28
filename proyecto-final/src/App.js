@@ -5,14 +5,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
 import { CartContext } from './context/CartContext';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Home from './components/Home';
 import CategoryContainer from './components/CategoryContainer';
-import { getProductos, getProductosByCategoria, getProductosById } from './firebase';
+
 export default function App() {
   const [contextProducto, setContextProducto] = useState([])
-  
-    return (
+  return (
     <>
       <body className="App colorDeFondo">
         <BrowserRouter className="App-header">

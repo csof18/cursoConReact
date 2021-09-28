@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Card, Button } from "react-bootstrap"
+
 export default function Category(props){
     return(
         <>
@@ -23,5 +24,4 @@ export default function Category(props){
             </Link>
         </>
     )
-
 }

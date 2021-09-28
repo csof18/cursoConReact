@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
+
 export default function ItemDetail(props){
     const { contextProducto, setContextProducto } = useContext(CartContext);
     const onAdd = (contador, contCantidad)=> {
-        const producto = { ...props, cantidad:contador, cantidadTotal:contCantidad}
-        const filtrarProducto = contextProducto.find(productoFiltrado => productoFiltrado.id === producto.id)
-        console.log('AAAAAAAAAAAAAAAAAVEEEEEEEEEEEEEEEEEEEER VALOR de producto ', producto)
-        if(!filtrarProducto)
-            setContextProducto([...contextProducto,producto])
-    
+    const producto = { ...props, cantidad:contador, cantidadTotal:contCantidad}
+    const filtrarProducto = contextProducto.find(productoFiltrado => productoFiltrado.id === producto.id)
+    if(!filtrarProducto)
+        setContextProducto([...contextProducto,producto])
+
     }
     return(
         <>
@@ -29,7 +29,6 @@ export default function ItemDetail(props){
                         <p className='precioProduc'>{props.precio} $</p>
                         <p className='stockProduc'>Disponibles {props.stock}</p>
                         <ItemCount  onAdd={onAdd} className='btnComprar ' valorStock={props.stock} />
-                        
                     </div>
                     <p className='datosEnvio'>{props.envio}</p>
                 </div>

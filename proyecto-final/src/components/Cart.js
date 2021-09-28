@@ -4,7 +4,6 @@ import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Form } from "react-bootstrap";
-
 import Delete from "./Delete";
 import CartContainer from "./CartContainer";
 import FormularioDeCompras from "./FormularioDeCompras";
@@ -14,32 +13,24 @@ export default function Cart(){
   const [pedirEnvio, setPedirEnvio] = useState(false);
   const [terminarCompra, setTerminarCompra] = useState(false)
   const [datosDeCompra, setDatosDeCompra] = useState({})
-  //calculando total
-  console.log('VER VALOR DE contextProducto en CARTCOUNT ', contextProducto);
-    let sumarPrecios = 0;
+  let sumarPrecios = 0;
     for ( const precioProducto of contextProducto){
       sumarPrecios += precioProducto.precio * precioProducto.cantidad
-      console.log('VER VALOR DE FOR DENTRO DEL FOR', sumarPrecios)
-      console.log('VER VALOR DE contextProducto en CARTCOUNT ', contextProducto);
     }
-    console.log('VER VALOR DE FOR FUERA DE EL', sumarPrecios)
-    let valorTotalConEnvio = 350 + sumarPrecios;
-    console.log('ver valor del TOTAL CON EL ENVIO ', valorTotalConEnvio);  
-
-    const vaciarCarrito = () => {
-      if(contextProducto.length !== 0){
-        console.log('ESTOY EN EL IF DEL CARRITO VACIO',contextProducto)
-        setContextProducto([])
-      }
+  let valorTotalConEnvio = 350 + sumarPrecios;
+  const vaciarCarrito = () => {
+    if(contextProducto.length !== 0){
+      setContextProducto([])
     }
-    const calcularCompra = () => {
-      setDatosDeCompra({
-        productos:contextProducto.map(({nombreProducto:nombre,precio,cantidad,descripcion}) => ({nombre,precio,cantidad,descripcion,totalProducto:precio*cantidad})),
-        envio: pedirEnvio ? 350 : 0,
-        subtotal: sumarPrecios,
-        total: pedirEnvio ? valorTotalConEnvio : sumarPrecios
-      })
-    }
+  }
+  const calcularCompra = () => {
+    setDatosDeCompra({
+      productos:contextProducto.map(({nombreProducto:nombre,precio,cantidad,descripcion}) => ({nombre,precio,cantidad,descripcion,totalProducto:precio*cantidad})),
+      envio: pedirEnvio ? 350 : 0,
+      subtotal: sumarPrecios,
+      total: pedirEnvio ? valorTotalConEnvio : sumarPrecios
+    })
+  }
   return (
     <>
       {(contextProducto.length !== 0) ? 
@@ -55,14 +46,12 @@ export default function Cart(){
           <Button variant="light" className="margen5" onClick={() => {
             setTerminarCompra(true)
             calcularCompra();
-            console.log('estoy en el terminar compra ', terminarCompra)}
-            }>Terminar Compra</Button>
+          }}>Terminar Compra</Button>
           <Link to="/item" ><Button variant="light" className="margen5">Ver mas productos</Button></Link>
           <Button variant="light" className="margen5" onClick={() => vaciarCarrito()}>Vaciar carrito {<Delete/>}</Button>
           {terminarCompra && <FormularioDeCompras datosDeCompra={datosDeCompra} borrarCarrito={vaciarCarrito} /> }
         </div>
       : 
-
         <div  className="anuncios">
           <h3>Aun no tiene productos en el carrito</h3>
           <Link to="/item" variant="light" className="linkConFormaDeBtn btnDerecha">Ver productos</Link>

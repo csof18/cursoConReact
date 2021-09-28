@@ -1,24 +1,18 @@
-
 import React,{ useContext,useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
+
 export default function CartWidget(){
     const [contarProductos, setContarProductos] = useState(0)
-    const {contextProducto, setContextProducto} =  useContext(CartContext);
+    const {contextProducto} =  useContext(CartContext);
     useEffect( () => {
         let productosEnCarrito = 0;
             for ( const cantidadDeProductos of contextProducto){
               productosEnCarrito += cantidadDeProductos.cantidad
-              console.log('VER VALOR DE CANTIDAD DENTRO DEL FOR ', cantidadDeProductos.cantidad)
             }
-            console.log("productosCarrito",productosEnCarrito)
             setContarProductos(productosEnCarrito)
         
     }, [contextProducto])
-    return (
-        <>
-            <div><i className="fas fa-shopping-cart">{contarProductos}</i></div>
-        </>
-    )
+    return <div><i className="fas fa-shopping-cart">{contarProductos}</i></div>
 }
 
 
