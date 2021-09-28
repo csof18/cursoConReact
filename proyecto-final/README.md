@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Librerias Externas Adicionales
+[React-Bootstrap](https://github.com/).
+Utilizado para darle una visual mas agradable y vistosa para el usuario
+
+[FontAwesome](https://github.com/).
+Utilizado para incorporar el icono de carrito y delete
+
+# Gif Explicativo
+[Video Gif](https://github.com/facebook/create-react-app)
+Fue utilizado para crear el gif que se pidio para la entrega
